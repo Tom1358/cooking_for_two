@@ -1,28 +1,18 @@
 import os
-import pymongo
+from flask import Flask
 if os.path.exists("env.py"):
     import env
 
 
-MONGO_URI = os.environ.get("MONGO_URI")
-DATABASE = "cooking_for_two"
-COLLECTION = "dishes"
+app = Flask(__name__)
 
 
-def mongo_connect(url):
-    try:
-        conn = pymongo.MongoClient(url)
-        print("Mongo is connected")
-        return conn
-    except pymongo.errors.ConnectionFailure as e:
-        print("Could not connect to MongoDB: %s") % e
+@app.route("/")
+def hello():
+    return "Hello World!"
 
 
-conn = mongo_connect(MONGO_URI)
-
-coll = conn[DATABASE][COLLECTION]
-
-documents = coll.find()
-
-for doc in documents:
-    print(doc)
+if __name__ == "__main__":
+    app.run(host=os.environ.get("IP"),
+            port=int(os.environ.get("PORT")),
+            debug=True)
