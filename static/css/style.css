@@ -1,0 +1,23 @@
+.text-shadow {
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+.pastel-red {
+    background-color: #E88468;
+}
+
+.pastel-blue {
+    background-color: #577590;
+}
+
+.pastel-green {
+    background-color: #9FB37F;
+}
+
+.pastel-yellow {
+    background-color: #EAC576;
+}
+
+.pastel-brown {
+    background-color: #583B23;
+}
