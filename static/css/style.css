@@ -4,20 +4,55 @@
 
 .pastel-red {
     background-color: #E88468;
+    color: white;
+}
+
+.text-pastel-red {
+    color: #E88468;
 }
 
 .pastel-blue {
     background-color: #577590;
 }
 
+.text-pastel-blue {
+    color: #577590;
+}
+
 .pastel-green {
     background-color: #9FB37F;
+}
+
+.text-pastel-green {
+    color: #9FB37F;
 }
 
 .pastel-yellow {
     background-color: #EAC576;
 }
 
+.text-pastel-yellow {
+    color: #EAC576;
+}
+
 .pastel-brown {
     background-color: #583B23;
+}
+
+.text-pastel-brown {
+    color: #583B23;
+}
+
+.seethrough-text {
+    color: rgba(255,255,255,.55)
+}
+
+.active-button:active {
+    background-color: white;
+    color: black;
+}
+
+.active-button:hover {
+    background-color: white;
+    color: black;
 }
