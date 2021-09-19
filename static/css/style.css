@@ -2,6 +2,8 @@
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
 
+/*-------- Colour theme for text and backgrounds --------*/
+
 .pastel-red {
     background-color: #E88468;
     color: white;
@@ -47,12 +49,49 @@
     color: rgba(255,255,255,.55)
 }
 
+/*-------- Hover and Active for buttons --------*/
+
 .active-button:active {
-    background-color: white;
-    color: black;
+    background-color: #EAC576;
+    color: #583B23;
 }
 
 .active-button:hover {
-    background-color: white;
-    color: black;
+    background-color: #EAC576;
+    color: #583B23;
+}
+
+.btn:hover {
+    background-color: #EAC576;
+    color: #583B23;
+}
+
+a:hover {
+    color: #E88468;
+}
+
+/*-------- Background theme for card - dimming background image --------*/
+
+.card{
+    
+    background-color: rgba(0,0,0,0.5);
+}
+
+.card-title .card-subtitle {
+    color: #fff;
+}
+
+/*-------- Background image --------*/
+
+.background-image {
+    background-image: url('/static/images/generic_photo.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+
+
+.input-group-text {
+    height: 38px;
 }
