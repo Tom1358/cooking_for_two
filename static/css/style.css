@@ -81,17 +81,30 @@ a:hover {
     color: #fff;
 }
 
-/*-------- Background image --------*/
+/*-------- Background images --------*/
 
-.background-image {
+.full-background-image {
     background-image: url('/static/images/generic_photo.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
 }
 
+.banner-background-image {
+    background-image: url('/static/images/generic_photo.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 50vh;
+}
 
+/*-------- Resizing Font Awesome icons --------*/
 
 .input-group-text {
     height: 38px;
+}
+
+.btn-outline-light {
+    color: #f8f9fa;
+    border-color: #577590;
+    background-color: #577590;
 }

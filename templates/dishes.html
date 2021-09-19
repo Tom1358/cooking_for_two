@@ -2,26 +2,26 @@
 {% block content %}
 
 <!-- Header-->
-<header class="pastel-blue py-5">
+<header class="banner-background-image py-5">
     <div class="container px-5">
         <div class="row gx-5 align-items-center justify-content-center">
             <div class="col-lg-8 col-xl-7 col-xxl-6">
-                <div class="my-5 text-center text-xl-start">
+                <div class="my-5 text-center text-xl-start card">
                     <h1 class="display-5 fw-bolder text-white mb-2 text-shadow">Cooking For Two
                     </h1>
-                    <p class="lead fw-normal text-white-50 mb-4">
+                    <p class="lead fw-normal text-white mb-4">
                         Explore and find new recipes</br>
                         Upload your own ideas</br>
                         Create your own cookbook</br>
                     </p>
                     <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
-                        <a class="btn pastel-red btn-lg px-4 me-sm-3 active-button" href="{{ url_for('register') }}">Register</a>
+                        <a class="btn pastel-red btn-lg px-4 me-sm-3 active-button"
+                            href="{{ url_for('register') }}">Register</a>
                         <a class="btn btn-outline-light btn-lg px-4" href="#features">Learn More</a>
                     </div>
                 </div>
             </div>
-            <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center"><img class="img-fluid rounded-3 border-light my-5"
-                    src="/static/images/logo.png" alt="..." /></div>
+            <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center"></div>
         </div>
     </div>
 </header>
