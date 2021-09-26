@@ -98,7 +98,6 @@ a:hover {
     background-image: url('/static/images/generic_photo.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-    height: 50vh;
     color:rgba(0, 0, 0, 0.5)
 }
 
@@ -113,3 +112,16 @@ a:hover {
     border-color: #577590;
     background-color: #577590;
 }
+
+/*-------- Moving card image on homepage recipes to the left --------*/
+
+.card {
+    flex-direction: row;
+    align-items: center;
+  }
+ 
+.card img {
+    width: 30%;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: calc(0.25rem - 1px);
+  }

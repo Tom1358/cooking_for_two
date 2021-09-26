@@ -59,6 +59,14 @@
     </div>
 </section>
 <section id="recipes">
+    <div class="card col-10 offset-1">
+        <img src="static/images/generic_photo.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
     {% for dish in dishes %}
         {{ dish.region }}<br>
         {{ dish.dish_name }}<br>
