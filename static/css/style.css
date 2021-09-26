@@ -132,7 +132,6 @@ a:hover {
 @media only screen and (max-width: 480px){
     .recipe-card {
         flex-direction: column;
-        width: 100%;
     }
 
     .card img {
