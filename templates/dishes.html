@@ -16,7 +16,7 @@
                     </p>
                     <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
                         <a class="btn pastel-red btn-lg px-4 me-sm-3 active-button"
-                            href="{{ url_for('register') }}">Register</a>
+                            href="#recipes">Browse Recipes</a>
                         <a class="btn btn-outline-light btn-lg px-4" href="#features">Learn More</a>
                     </div>
                 </div>
@@ -36,12 +36,12 @@
                     <div class="col mb-5 h-100">
                         <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"></div>
                         <h2 class="h5"><i class="fas fa-utensils"></i> Step 1: Register</h2>
-                        <p class="mb-0">Click on the <em>Get Started</em> button above, or the <em>Register</em> link in the navigation toolbar at the top of the page.</p>
+                        <p class="mb-0">Click on the <em>Get Started</em> button above to explore what recipes are already available, or the <em>Register</em> link in the navigation toolbar at the top of the page to sign up.</p>
                     </div>
                     <div class="col mb-5 h-100">
                         <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-building"></i></div>
                         <h2 class="h5"><i class="fas fa-utensils"></i> Step 2: Find a recipe you like</h2>
-                        <p class="mb-0">Search below to find a recipe that takes your fancy.  Click on it to see what you'll need and what to do.</p>
+                        <p class="mb-0">Once you've found a recipe that takes your fancy, you'll need to register to see what you'll need and what to do.</p>
                     </div>
                     <div class="col mb-5 mb-md-0 h-100">
                         <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-toggles2"></i></div>
@@ -58,7 +58,7 @@
         </div>
     </div>
 </section>
-
+<section id="recipes">
     {% for dish in dishes %}
         {{ dish.region }}<br>
         {{ dish.dish_name }}<br>
@@ -66,5 +66,6 @@
         {{ dish.equipment }}<br>
         {{ dish.recipe }}<br>
     {% endfor %}
+</section>
 
 {% endblock %}
