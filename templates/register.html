@@ -12,7 +12,7 @@
                     <h4 class="card-subtitle mb-2 text-white">{{ message }}</h4></br>
                     {% endfor %}
                 {% else %}
-                <h4 class="card-subtitle mb-2 text-white">Fill in your name and email address to sign up</h4></br>
+                <h4 class="card-subtitle mb-2 text-white">Pop in a username and password to sign up</h4></br>
                 {% endif %}
             {% endwith %}
             <form method="POST" action="{{ url_for('register') }}">

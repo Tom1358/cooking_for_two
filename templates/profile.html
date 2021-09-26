@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- Header-->
+<header class="banner-background-image py-5">
+    <div class="container px-5">
+        <div class="row gx-5 align-items-center justify-content-center">
+            <div class="col-lg-8 col-xl-7 col-xxl-6">
+                <div class="my-5 text-center text-xl-start title-card">
+                    <h1 class="display-5 fw-bolder text-white mb-2 text-shadow">Welcome, {{ username }}!
+                    </h1>
+                    <p class="lead fw-normal text-white mb-4">
+                        Explore and find new recipes</br>
+                        Upload your own ideas</br>
+                        Create your own cookbook</br>
+                    </p>
+                    <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
+                        <a class="btn pastel-red btn-lg px-4 me-sm-3 active-button"
+                            href="#recipes">Create Recipe</a>
+                        <a class="btn btn-outline-light btn-lg px-4" href="#features">Amend/ Delete Recipe</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center"></div>
+        </div>
+    </div>
+</header>
+
+<!-- Features section-->
+<section class="py-5" id="features">
+    <div class="container px-5 my-5">
+        <div class="row gx-5">
+            <div class="col-lg-4 mb-5 mb-lg-0"><h2 class="fw-bolder mb-0">Broaden your horizons in four steps:</h2></div>
+            <div class="col-lg-8">
+                <div class="row gx-5 row-cols-1 row-cols-md-2">
+                    <div class="col mb-5 h-100">
+                        <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"></div>
+                        <h2 class="h5"><i class="fas fa-utensils"></i> Step 1: Register</h2>
+                        <p class="mb-0">Click on the <em>Browse Recipes</em> button above to explore what recipes are already available, or the <em>Register</em> link in the navigation toolbar at the top of the page to sign up.</p>
+                    </div>
+                    <div class="col mb-5 h-100">
+                        <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-building"></i></div>
+                        <h2 class="h5"><i class="fas fa-utensils"></i> Step 2: Find a recipe you like</h2>
+                        <p class="mb-0">Once you've found a recipe that takes your fancy, you'll need to register to see what you'll need and what to do.</p>
+                    </div>
+                    <div class="col mb-5 mb-md-0 h-100">
+                        <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-toggles2"></i></div>
+                        <h2 class="h5"><i class="fas fa-utensils"></i> Step 3: Get your tools</h2>
+                        <p class="mb-0">Need the tools?  Click on the <em>Shop</em> link to get the equipment you need for the recipes you see.</p>
+                    </div>
+                    <div class="col h-100">
+                        <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-toggles2"></i></div>
+                        <h2 class="h5"><i class="fas fa-utensils"></i> Step 4: Create your own recipes</h2>
+                        <p class="mb-0">Click on the <em>Create Recipe</em> link to upload your own recipes/ ideas and build your cookbook.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="recipes">
+    {% for dish in dishes %}
+
+        {% if loop.index % 2 !=0 %}
+        <div class="card recipe-card col-10 offset-1">
+            <img src="static/images/generic_photo.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h3 class="card-title">{{ dish.dish_name }}</h3>
+                <h5 class="card-title">{{ dish.region }}</h5>
+                <p class="card-text text-right">{{ dish.description }}</p>
+                <a href="#" class="btn pastel-red btn-lg px-4 me-sm-3 active-button">More</a>
+            </div>
+        </div>
+        {% else %}
+        <div class="card recipe-card col-10 offset-1">
+            <div class="card-body">
+                <h3 class="card-title">{{ dish.dish_name }}</h3>
+                <h5 class="card-title">{{ dish.region }}</h5>
+                <p class="card-text">{{ dish.description }}</p>
+                <a href="#" class="btn pastel-red btn-lg px-4 me-sm-3 active-button">More</a>
+            </div>
+            <img src="static/images/generic_photo.jpg" class="card-img-top" alt="...">
+        </div>
+
+        {% endif %}
+    {% endfor %}
+</section>
+
+{% endblock %}
