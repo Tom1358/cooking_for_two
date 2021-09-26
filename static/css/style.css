@@ -76,7 +76,7 @@ a:hover {
 
 /*-------- Background theme for card - dimming background image --------*/
 
-.card{
+.title-card{
     
     background-color: rgba(0,0,0,0.5);
 }
@@ -113,11 +113,14 @@ a:hover {
     background-color: #577590;
 }
 
-/*-------- Moving card image on homepage recipes to the left --------*/
+/*-------- Styline recipe cards on dishes.html --------*/
 
-.card {
+.recipe-card {
     flex-direction: row;
     align-items: center;
+    margin-bottom: 10px;
+    background-color: #fff;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
   }
  
 .card img {
