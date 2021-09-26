@@ -113,7 +113,7 @@ a:hover {
     background-color: #577590;
 }
 
-/*-------- Styline recipe cards on dishes.html --------*/
+/*-------- Styling recipe cards on dishes.html --------*/
 
 .recipe-card {
     flex-direction: row;
@@ -137,4 +137,10 @@ a:hover {
     .card img {
         width: 100%;
     }
+}
+
+/*-------- opaque background for card on register.html --------*/
+
+.register-card {
+    background-color: rgba(0,0,0,0.5);
 }
