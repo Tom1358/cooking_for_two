@@ -104,8 +104,9 @@ def recipe(dish_name):
 
         # grab recipe name from database
         dish_name = mongo.db.dishes.find_one(
-            {"url": dish_name})
-        return render_template("individual_recipe.html")
+            {"_id": ObjectId(dish_name)})
+        return render_template(
+            "individual_recipe.html", dish_name=dish_name)
     else:
         return redirect(url_for("register"))
 
