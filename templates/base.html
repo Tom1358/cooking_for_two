@@ -27,9 +27,14 @@
                 aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="{{ url_for('dishes') }}">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ url_for('register') }}">Register</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ url_for('profile', username=session['user']) }}">Login</a></li>
+                    {% if session.user %}
+                        <li class="nav-item"><a class="nav-link" href="{{ url_for('profile', username=session['user']) }}">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url_for('logout') }}">Logout</a></li>
+                    {% else %}
+                        <li class="nav-item"><a class="nav-link" href="{{ url_for('dishes') }}">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url_for('register') }}">Register</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url_for('login') }}">Login</a></li>
+                    {% endif %}
                     <li class="nav-item"><a class="nav-link" href="#">Shop</a></li>
                 </ul>
             </div>
