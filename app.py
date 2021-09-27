@@ -83,10 +83,10 @@ def profile(username):
     # grab session user's username from database
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
-    
+
     if session["user"]:
         return render_template("profile.html", username=username)
-    
+
     return redirect(url_for("login"))
 
 
@@ -96,6 +96,18 @@ def logout():
     flash("You have been logged out")
     session.clear()
     return redirect(url_for("login"))
+
+
+@app.route("/recipe/<dish_name>")
+def recipe(dish_name):
+    if session["user"]:
+
+        # grab recipe name from database
+        dish_name = mongo.db.dishes.find_one(
+            {"url": dish_name})
+        return render_template("individual_recipe.html")
+    else:
+        return redirect(url_for("register"))
 
 
 if __name__ == "__main__":
