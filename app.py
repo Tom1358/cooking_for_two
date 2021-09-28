@@ -36,7 +36,6 @@ def register():
             flash("Username Already Exists")
             return redirect(url_for("register"))
 
-        
         register = {
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(request.form.get("password"))
@@ -85,7 +84,9 @@ def profile(username):
         {"username": session["user"]})["username"]
 
     if session["user"]:
-        return render_template("profile.html", username=username)
+        dishes = mongo.db.dishes.find()
+        return render_template(
+            "profile.html", username=username, dishes=dishes)
 
     return redirect(url_for("login"))
 
@@ -100,15 +101,12 @@ def logout():
 
 @app.route("/recipe/<dish_name>")
 def recipe(dish_name):
-    if session["user"]:
 
-        # grab recipe name from database
-        dish_name = mongo.db.dishes.find_one(
-            {"_id": ObjectId(dish_name)})
-        return render_template(
-            "individual_recipe.html", dish_name=dish_name)
-    else:
-        return redirect(url_for("register"))
+    # grab recipe name from database
+    dish_name = mongo.db.dishes.find_one(
+    {"dish_name": dish_name})
+    return render_template(
+    "individual_recipe.html", dish_name=dish_name)
 
 
 if __name__ == "__main__":
