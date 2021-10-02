@@ -102,9 +102,9 @@ def logout():
 @app.route("/recipe/<dish_name>")
 def individual_recipe(dish_name):
     # grab recipe name from database
-    dishes = mongo.db.dishes.find_one()
+    var_one = mongo.db.dishes.find_one()
     return render_template(
-        "individual_recipe.html", dishes=dishes, dish_name=dish_name)
+        "individual_recipe.html", var_two=var_one, dish_name=dish_name)
 
 
 if __name__ == "__main__":
