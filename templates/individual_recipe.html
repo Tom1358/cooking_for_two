@@ -9,7 +9,7 @@
             <div class="col-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0"
                     src="https://dummyimage.com/900x400/dee2e6/6c757d.jpg" alt="..." /></div>
             <div class="col-lg-5">
-                <h1 class="font-weight-light">{{ dish_name }}</h1>
+                <h1 class="font-weight-light">{{ recipe.dish_name }}</h1>
                 <p></p>
                 <a class="btn btn-primary" href="#!">Edit</a>
                 <a class="btn btn-primary" href="#!">Delete</a>
@@ -18,7 +18,7 @@
         <!-- Call to Action-->
         <div class="card text-white bg-secondary my-5 py-4 text-center">
             <div class="card-body">
-                <p class="text-white m-0">{{ var_two.description }}</p>
+                <p class="text-white m-0">{{ recipe.description }}</p>
             </div>
         </div>
         <!-- Content Row-->
@@ -27,7 +27,7 @@
                 <div class="card h-100">
                     <div class="card-body">
                         <h2 class="card-title">Ingredients</h2>
-                        <p class="card-text">{{ var_two.ingredients }}</p>
+                        <p class="card-text">{{ recipe.ingredients }}</p>
                     </div>
                 </div>
             </div>
@@ -35,7 +35,7 @@
                 <div class="card h-100">
                     <div class="card-body">
                         <h2 class="card-title">Recipe</h2>
-                        <p class="card-text">{{ recipe }}</p>
+                        <p class="card-text">{{ recipe.recipe }}</p>
                     </div>
                 </div>
             </div>
@@ -43,7 +43,7 @@
                 <div class="card h-100">
                     <div class="card-body">
                         <h2 class="card-title">Equipment</h2>
-                        <p class="card-text">{{ equipment }}</p>
+                        <p class="card-text">{{ recipe.equipment }}</p>
                     </div>
                 </div>
             </div>
