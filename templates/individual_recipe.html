@@ -7,12 +7,12 @@
         <!-- Heading Row-->
         <div class="row gx-4 gx-lg-5 align-items-center my-5">
             <div class="col-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0"
-                    src="{{ recipe.image }}" alt="..." /></div>
+                    src="/static/images/{{ recipe.dish_name.lower() }}.jpg" alt="..." /></div>
             <div class="col-lg-5">
                 <h1 class="font-weight-light">{{ recipe.dish_name }}</h1>
                 <p></p>
-                <a class="btn btn-primary" href="#!">Edit</a>
-                <a class="btn btn-primary" href="#!">Delete</a>
+                <a class="btn pastel-red" href="#!">Edit</a>
+                <a class="btn pastel-blue text-white" href="#!">Delete</a>
             </div>
         </div>
         <!-- Call to Action-->
@@ -23,19 +23,23 @@
         </div>
         <!-- Content Row-->
         <div class="row gx-4 gx-lg-5">
-            <div class="col-md-3 mb-5">
+            <div class="col-md-4 mb-5">
                 <div class="card h-100">
                     <div class="card-body">
                         <h2 class="card-title">Ingredients</h2>
-                        <li class="card-text">
-                            {% for value in recipe.ingredients %}
-                                <ul>{{ value }}</ul>
+                        <p class="card-text">
+                            {% for dict_item in recipe.ingredients %}
+                                {% for key, value in dict_item.items() %}
+                                    <ul>
+                                        {{key}} - {{ value }}
+                                    </ul>
+                                {% endfor %}
                             {% endfor %}
-                        </li>
+                        </p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 mb-5">
+            <div class="col-md-4 mb-5">
                 <div class="card h-100">
                     <div class="card-body">
                         <h2 class="card-title">Recipe</h2>
@@ -45,7 +49,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 mb-5">
+            <div class="col-md-4 mb-5">
                 <div class="card h-100">
                     <div class="card-body">
                         <h2 class="card-title">Equipment</h2>
