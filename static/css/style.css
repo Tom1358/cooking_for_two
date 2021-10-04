@@ -144,3 +144,11 @@ a:hover {
 .register-card {
     background-color: rgba(0,0,0,0.5);
 }
+
+/*-------- dropdown menu on add_recipe.html --------*/
+
+.category-dropdown {
+    color: gray;
+    background-color: white;
+    border-color: white;
+}
