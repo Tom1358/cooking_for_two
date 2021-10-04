@@ -109,10 +109,26 @@ def individual_recipe(recipe_id):
         "individual_recipe.html", recipe=recipe)
 
 
-@app.route("/add_recipe")
+@app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
+    if request.method == "POST":
+        dish = {
+            "region": request.form.get("region"),
+            "dish_name": request.form.get("dish_name"),
+            # n.b. here for ingredients, user could create a list of ingredients in the form (one at a time),
+            # and then use request.form.getlist() here
+            "ingredients": request.form.get("ingredients"),
+            "equipment": request.form.get("equipment"),
+            "description": request.form.get("description"),
+            "image": request.form.get("image"),
+            "created_by": session["user"]
+        }
+        mongo.db.dishes.insert_one(dish)
+        flash("Task Successfully Added")
+        return redirect(url_for("dishes"))
     dishes = mongo.db.dishes.find()
     categories = mongo.db.categories.find().sort("region")
+
     return render_template(
         "add_recipe.html", dishes=dishes, categories=categories)
 
