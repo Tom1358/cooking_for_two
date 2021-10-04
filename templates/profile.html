@@ -63,7 +63,7 @@
 
         {% if loop.index % 2 !=0 %}
         <div class="card recipe-card col-10 offset-1">
-            <img src="static/images/generic_photo.jpg" class="card-img-top" alt="...">
+            <img src="{{ dish.image }}" class="card-img-top" alt="...">
             <div class="card-body">
                 <h3 class="card-title"><a href="{{ url_for('individual_recipe', recipe_id=dish._id) }}">{{ dish.dish_name }}</a></h3>
                 <h5 class="card-title">{{ dish.region }}</h5>
@@ -79,7 +79,7 @@
                 <p class="card-text">{{ dish.description }}</p>
                 <a href="#" class="btn pastel-red btn-lg px-4 me-sm-3 active-button">More</a>
             </div>
-            <img src="static/images/generic_photo.jpg" class="card-img-top" alt="...">
+            <img src="{{ dish.image }}" class="card-img-top" alt="...">
         </div>
 
         {% endif %}

@@ -27,7 +27,11 @@
                 <div class="card h-100">
                     <div class="card-body">
                         <h2 class="card-title">Ingredients</h2>
-                        <p class="card-text">{{ recipe.ingredients }}</p>
+                        <li class="card-text">
+                            {% for value in recipe.ingredients %}
+                                <ul>{{ value }}</ul>
+                            {% endfor %}
+                        </li>
                     </div>
                 </div>
             </div>
@@ -35,7 +39,9 @@
                 <div class="card h-100">
                     <div class="card-body">
                         <h2 class="card-title">Recipe</h2>
-                        <p class="card-text">{{ recipe.recipe }}</p>
+                        {% for value in recipe.recipe %}
+                            <ol>{{ value }}</ol>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
@@ -43,7 +49,9 @@
                 <div class="card h-100">
                     <div class="card-body">
                         <h2 class="card-title">Equipment</h2>
-                        <p class="card-text">{{ recipe.equipment }}</p>
+                        {% for value in recipe.equipment %}
+                            <ol>{{ value }}</ol>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
