@@ -1,46 +1,84 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h3>Add Recipe</h3>
 <div class="full-background-image">
 
     <div class="card register-card col-6 offset-3">
         <div class="card-body">
-            <h2 class="card-title text-white">Login</h2></br>
+            <h2 class="card-title text-white">New Recipe</h2></br>
             {% with messages = get_flashed_messages() %}
-                {% if messages %}
-                    {% for message in messages %}
-                        <h4 class="card-subtitle mb-2 text-white">{{ message }}</h4></br>
-                    {% endfor %}
-                {% else %}
-                    <h4 class="card-subtitle mb-2 text-white">Fill in the following details to create a new recipe</h4></br>
-                {% endif %}
+            {% if messages %}
+            {% for message in messages %}
+            <h4 class="card-subtitle mb-2 text-white">{{ message }}</h4></br>
+            {% endfor %}
+            {% else %}
+            <h4 class="card-subtitle mb-2 text-white">Fill in the following details to create a new recipe</h4></br>
+            {% endif %}
             {% endwith %}
-            <form method="POST" action="{{ url_for('login') }}">
+            <form method="POST" action="{{ url_for('add_recipe') }}">
+
+                <!-- Region for user to input -->
                 <div class="input-group form-group">
                     <div class="input-group-prepend">
-                        <span class="input-group-text"><i class="fas fa-user"></i></span>
+                        <span class="input-group-text"><i class="fas fa-globe-americas"></i></span>
                     </div>
-                    <input id="username" name="username" type="text" class="form-control validate" minlength="5"
-                        maxlength="15" placeholder="username" required>
-                    <label for="username"></label>
+                    <input id="region" name="region" type="text" class="form-control validate" minlength="5"
+                        maxlength="20" placeholder="Region" required>
                 </div></br>
+
+                <!-- Dish Name for user to input -->
                 <div class="input-group form-group">
                     <div class="input-group-prepend">
-                        <span class="input-group-text"><i class="fas fa-key"></i></span>
+                        <span class="input-group-text"><i class="fas fa-utensils"></i></span>
                     </div>
-                    <input type="password" id="password" name="password" type="text" class="form-control validate"
-                        minlength="5" maxlength="15" placeholder="password" required>
-                    <label for="password"></label>
+                    <input id="dish_name" name="dish_name" type="text" class="form-control validate" minlength="5"
+                        maxlength="35" placeholder="Dish Name" required>
                 </div></br>
+
+                <!-- Ingredients for user to input -->
+                <div class="input-group form-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-utensil-spoon"></i></span>
+                    </div>
+                    <input id="ingredients" name="ingredients" type="text" class="form-control validate" minlength="5"
+                        maxlength="35" placeholder="Ingredients" required>
+                </div></br>
+
+                <!-- Equipment for user to input -->
+                <div class="input-group form-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-mortar-pestle"></i></span>
+                    </div>
+                    <input id="equipment" name="equipment" type="text" class="form-control validate" minlength="5"
+                        maxlength="35" placeholder="Equipment Needed" required>
+                </div></br>
+
+                <!-- Description for user to input -->
+                <div class="input-group form-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fab fa-gripfire"></i></span>
+                    </div>
+                    <input id="description" name="description" type="text" class="form-control validate" minlength="5"
+                        maxlength="35" placeholder="Description" required>
+                </div></br>
+                
+                <!-- Image for user to input -->
+                <div class="input-group form-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-image"></i></span>
+                    </div>
+                    <input id="image" name="image" type="url" class="form-control validate" minlength="5"
+                        maxlength="100" placeholder="url for image">
+                </div></br>
+
                 <div class="form-group">
                     <button type="submit" id="submit"
-                        class="btn pastel-red col-8 offset-2 active-button:active active-button:hover">Log In</button>
+                        class="btn pastel-red col-8 offset-2 active-button:active active-button:hover">Complete</button>
                 </div></br>
             </form>
             <div class="card-footer">
                 <div class="d-flex justify-content-center links text-white">
-                    Don't have an account yet? <a href="{{ url_for('register') }}" class="text-pastel-yellow">Register</a>
+                    <a href="{{ url_for('dishes') }}" class="text-pastel-yellow">Cancel</a>
                 </div>
             </div>
         </div>

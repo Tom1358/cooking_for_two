@@ -111,7 +111,8 @@ def individual_recipe(recipe_id):
 
 @app.route("/add_recipe")
 def add_recipe():
-    return render_template("add_recipe.html")
+    dishes = mongo.db.dishes.find()
+    return render_template("add_recipe.html", dishes=dishes)
 
 
 if __name__ == "__main__":
