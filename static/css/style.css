@@ -152,3 +152,9 @@ a:hover {
     background-color: white;
     border-color: white;
 }
+
+/*-------- margin for 'add/ amend recipe' and 'more' buttons on homepage --------*/
+
+.with-space {
+    margin: 5px;
+}
