@@ -18,7 +18,11 @@
                         <select class="form-control" id="region" name="region">
                             <option selected disabled>Region</option>
                                 {% for category in categories %}
-                                    <option value="{{ category.region  }}">{{ category.region }}</option>
+                                    {% if category.region == recipe.region %}
+                                        <option value="{{ category.region  }}" selected>{{ category.region }}</option>
+                                    {% else %}
+                                        <option value="{{ category.region  }}">{{ category.region }}</option>
+                                    {% endif %}
                                 {% endfor %}
                             </div>
                         </select>
