@@ -6,15 +6,7 @@
     <div class="card register-card col-6 offset-3">
         <div class="card-body">
             <h2 class="card-title text-white">New Recipe</h2></br>
-            {% with messages = get_flashed_messages() %}
-            {% if messages %}
-            {% for message in messages %}
-            <h4 class="card-subtitle mb-2 text-white">{{ message }}</h4></br>
-            {% endfor %}
-            {% else %}
-            <h4 class="card-subtitle mb-2 text-white">Fill in the following details to create a new recipe</h4></br>
-            {% endif %}
-            {% endwith %}
+            <h4 class="card-subtitle mb-2 text-white">Fill in the following details</h4></br>
             <form method="POST" action="{{ url_for('add_recipe') }}">
 
                 <!-- Region for user to input -->
