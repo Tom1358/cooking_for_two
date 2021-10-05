@@ -140,7 +140,7 @@ def edit_recipe(recipe_id):
 
     categories = mongo.db.categories.find().sort("region")
     return render_template(
-        "edit_task.html", recipe=recipe, categories=categories)
+        "edit_recipe.html", recipe=recipe, categories=categories)
 
 
 
