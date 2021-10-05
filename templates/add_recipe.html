@@ -22,17 +22,14 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-globe-americas"></i></span>
                     </div>
-                    <div class="dropdown">
-                        <button class="btn btn-secondary btn-block dropdown-toggle category-dropdown" type="button"
-                            id="region" name="region" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Region
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            {% for category in categories %}
-                                <a class="dropdown-item" value="{{ category.region  }}">{{ category.region }}</a>
-                            {% endfor %}
-                        </div>
-                        
+                    <div class="form-group">
+                        <select class="form-control" id="region" name="region">
+                            <option selected disabled>Region</option>
+                                {% for category in categories %}
+                                    <option value="{{ category.region  }}">{{ category.region }}</option>
+                                {% endfor %}
+                            </div>
+                        </select>
                     </div>
                 </div></br>
 

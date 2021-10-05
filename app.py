@@ -3,7 +3,7 @@ from flask import (
     Flask, flash, render_template, redirect, 
     request, session, url_for)
 from flask_pymongo import PyMongo
-from bson.objectid  import ObjectId
+from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
     import env
@@ -41,7 +41,7 @@ def register():
             "password": generate_password_hash(request.form.get("password"))
         }
         mongo.db.users.insert_one(register)
-
+        
         # put new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
         flash("Registration Successful!")
@@ -59,11 +59,11 @@ def login():
         if existing_user:
             # ensure password input matches hashed, saved password
             if check_password_hash(
-                existing_user["password"], request.form.get("password")):
-                    session["user"] = request.form.get("username").lower()
-                    flash("Welcome, {}".format(
+                    existing_user["password"], request.form.get("password")):
+                session["user"] = request.form.get("username").lower()
+                flash("Welcome, {}".format(
                         request.form.get("username")))
-                    return redirect(url_for(
+                return redirect(url_for(
                         "profile", username=session["user"]))
             else:
                 # invalid password match
@@ -115,7 +115,8 @@ def add_recipe():
         dish = {
             "region": request.form.get("region"),
             "dish_name": request.form.get("dish_name"),
-            # n.b. here for ingredients, user could create a list of ingredients in the form (one at a time),
+            # n.b. here for ingredients, user could create a list of 
+            # ingredients in the form (one at a time),
             # and then use request.form.getlist() here
             "ingredients": request.form.get("ingredients"),
             "equipment": request.form.get("equipment"),
