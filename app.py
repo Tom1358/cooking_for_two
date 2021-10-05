@@ -41,7 +41,7 @@ def register():
             "password": generate_password_hash(request.form.get("password"))
         }
         mongo.db.users.insert_one(register)
-        
+
         # put new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
         flash("Registration Successful!")
@@ -125,8 +125,8 @@ def add_recipe():
             "created_by": session["user"]
         }
         mongo.db.dishes.insert_one(dish)
-        flash("Task Successfully Added")
         return redirect(url_for("dishes"))
+        flash("Dish Successfully Added")
     dishes = mongo.db.dishes.find()
     categories = mongo.db.categories.find().sort("region")
 

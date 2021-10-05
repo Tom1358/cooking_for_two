@@ -78,6 +78,7 @@
                 <h3 class="card-title"><a href="{{ url_for('register') }}">{{ dish.dish_name }}</a></h3>
                 <h5 class="card-title">{{ dish.region }}</h5>
                 <p class="card-text">{{ dish.description }}</p>
+                <p class="card-text text-right">by: {{ dish.created_by }}</p>
                 <a href="{{ url_for('register') }}" class="btn pastel-red btn-lg px-4 me-sm-3 active-button">More</a>
             </div>
             <img src="static/images/generic_photo.jpg" class="card-img-top" alt="...">
