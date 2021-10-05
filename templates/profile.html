@@ -17,47 +17,14 @@
                     <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
                         <a class="btn pastel-red btn-lg px-4 me-sm-3 active-button with-space"
                             href="{{ url_for('add_recipe') }}">Create Recipe</a>
-                        <a class="btn btn-outline-light btn-lg px-4 with-space" href="#features">Amend/ Delete Recipe</a>
+                        <a class="btn btn-outline-light btn-lg px-4 with-space" href="#recipes">Browse Recipes</a>
                     </div>
                 </div>
             </div>
-            <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center"></div>
         </div>
     </div>
 </header>
-
-<!-- Features section-->
-<section class="py-5" id="features">
-    <div class="container px-5 my-5">
-        <div class="row gx-5">
-            <div class="col-lg-4 mb-5 mb-lg-0"><h2 class="fw-bolder mb-0">Broaden your horizons in four steps:</h2></div>
-            <div class="col-lg-8">
-                <div class="row gx-5 row-cols-1 row-cols-md-2">
-                    <div class="col mb-5 h-100">
-                        <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"></div>
-                        <h2 class="h5"><i class="fas fa-utensils"></i> Step 1: Register</h2>
-                        <p class="mb-0">Click on the <em>Browse Recipes</em> button above to explore what recipes are already available, or the <em>Register</em> link in the navigation toolbar at the top of the page to sign up.</p>
-                    </div>
-                    <div class="col mb-5 h-100">
-                        <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-building"></i></div>
-                        <h2 class="h5"><i class="fas fa-utensils"></i> Step 2: Find a recipe you like</h2>
-                        <p class="mb-0">Once you've found a recipe that takes your fancy, you'll need to register to see what you'll need and what to do.</p>
-                    </div>
-                    <div class="col mb-5 mb-md-0 h-100">
-                        <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-toggles2"></i></div>
-                        <h2 class="h5"><i class="fas fa-utensils"></i> Step 3: Get your tools</h2>
-                        <p class="mb-0">Need the tools?  Click on the <em>Shop</em> link to get the equipment you need for the recipes you see.</p>
-                    </div>
-                    <div class="col h-100">
-                        <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-toggles2"></i></div>
-                        <h2 class="h5"><i class="fas fa-utensils"></i> Step 4: Create your own recipes</h2>
-                        <p class="mb-0">Click on the <em>Create Recipe</em> link to upload your own recipes/ ideas and build your cookbook.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+<br>
 <section id="recipes">
     {% for dish in dishes %}
 
@@ -70,6 +37,7 @@
                 <p class="card-text text-right">{{ dish.description }}</p>
                 <p class="card-text text-right">by: {{ dish.created_by }}</p>
                 <a href="{{ url_for('individual_recipe', recipe_id=dish._id) }}" class="btn pastel-red btn-lg px-4 me-sm-3 active-button">More</a>
+                <a href="{{ url_for('edit_recipe', recipe_id=dish._id) }}" class="btn pastel-blue btn-lg px-4 me-sm-3 active-button text-white">Edit</a>
             </div>
         </div>
         {% else %}
@@ -80,6 +48,7 @@
                 <p class="card-text">{{ dish.description }}</p>
                 <p class="card-text text-right">by: {{ dish.created_by }}</p>
                 <a href="{{ url_for('individual_recipe', recipe_id=dish._id) }}" class="btn pastel-red btn-lg px-4 me-sm-3 active-button">More</a>
+                <a href="{{ url_for('edit_recipe', recipe_id=dish._id) }}" class="btn pastel-blue btn-lg px-4 me-sm-3 active-button text-white">Edit</a>
             </div>
             <img src="/static/images/{{ dish.dish_name.lower() }}.jpg" class="card-img-top" alt="...">
         </div>
