@@ -34,8 +34,9 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-utensils"></i></span>
                     </div>
+                    <label for="dish_name">Dish Name</label>
                     <input id="dish_name" name="dish_name" value="{{ recipe.dish_name }}" type="text" class="form-control validate" minlength="5"
-                        maxlength="55" placeholder="Dish Name" required>
+                        maxlength="55" placeholder="Fried Eggs" required>
                 </div></br>
 
                 <!-- Ingredients for user to input -->
@@ -43,8 +44,9 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-utensil-spoon"></i></span>
                     </div>
+                    <label for="ingredients">Ingredients</label>
                     <input id="ingredients" name="ingredients" value="{{ recipe.ingredients }}" type="text" class="form-control validate" minlength="5"
-                        maxlength="55" placeholder="Ingredients" required>
+                        maxlength="55" placeholder="Eggs" required>
                     <div class="input-group-prepend">
                         <span class="input-group-text"><a id="add_row"><i class="fas fa-plus"></i></a></span>
                     </div>
@@ -58,8 +60,9 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-mortar-pestle"></i></span>
                     </div>
+                    <label for="equipment">Equipment</label>
                     <input id="equipment" name="equipment" value="{{ recipe.equipment }}"type="text" class="form-control validate" minlength="5"
-                        maxlength="35" placeholder="Equipment Needed" required>
+                        maxlength="35" placeholder="Frying Pan" required>
                 </div></br>
 
                 <!-- Description for user to input -->
@@ -67,8 +70,9 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fab fa-gripfire"></i></span>
                     </div>
+                    <label for="description">Description</label>
                     <input id="description" name="description" value="{{ recipe.description }}" type="text" class="form-control validate" minlength="5"
-                        maxlength="35" placeholder="Description" required>
+                        maxlength="35" placeholder="The classic breakfast to help you wake up" required>
                 </div></br>
 
                 <!-- Image for user to input -->
@@ -76,6 +80,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-image"></i></span>
                     </div>
+                    <label for="image">URL for image</label>
                     <input id="image" name="image" value="{{ recipe.image }}" type="url" class="form-control validate" minlength="5"
                         maxlength="100" placeholder="url for image">
                 </div></br>
