@@ -10,9 +10,10 @@
                     src="/static/images/{{ recipe.dish_name.lower() }}.jpg" alt="..." /></div>
             <div class="col-lg-5">
                 <h1 class="font-weight-light">{{ recipe.dish_name }}</h1>
-                <p></p>
-                <a class="btn pastel-red" href="#!">Edit</a>
-                <a class="btn pastel-blue text-white" href="#!">Delete</a>
+                {% if session.user|lower == recipe.created_by|lower %}
+                    <a class="btn pastel-red" href="#!">Edit</a>
+                    <a class="btn pastel-blue text-white" href="#!">Delete</a>
+                {% endif %}
             </div>
         </div>
         <!-- Call to Action-->

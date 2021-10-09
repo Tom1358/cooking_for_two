@@ -33,6 +33,25 @@ As a business owner of the site, I want:
 - users to be encouraged, but not pushed, to visit the shop page to buy items through the website.
 
 ## Structure
+### Overview of site and page structure, including functionality and purpose:
+#### Home Page
+- Header for easy navigation between pages of the site.
+- Flashed messages appear to left of navigation bar for consistency throughout site.
+- Welcome title with 'Browse Recipes' and 'Register' buttons for simplicity and clarity
+- Dish Cards for key information about a dish - region, title, creator, 'More' button to register
+
+#### Register Page/ Login Page
+- Username input: text input box
+- Password input: text input box
+- Submit Button: to send information to back-end
+- Sign-in link: if users already have a profile
+
+#### Profile Page
+- Similar structure to Home Page to ensure consistency across website to improve UX
+- Welcome message now has "User's Homepage" to indicate logged in
+- Search bar to allow user 
+
+
 (description of each page, and image)
 
 Skeleton (wireframes)
