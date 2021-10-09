@@ -34,25 +34,52 @@ As a business owner of the site, I want:
 
 ## Structure
 ### Overview of site and page structure, including functionality and purpose:
-#### Home Page
+<details>
+<summary>Home Page</summary>
+
 - Header for easy navigation between pages of the site.
 - Flashed messages appear to left of navigation bar for consistency throughout site.
 - Welcome title with 'Browse Recipes' and 'Register' buttons for simplicity and clarity
 - Dish Cards for key information about a dish - region, title, creator, 'More' button to register
+</details><br>
 
-#### Register Page/ Login Page
+<details>
+<summary>Register Page/ Login Page</summary>
+
 - Username input: text input box
 - Password input: text input box
 - Submit Button: to send information to back-end
 - Sign-in link: if users already have a profile
+</details><br>
 
-#### Profile Page
+<details>
+<summary>Profile Page</summary>
+
 - Similar structure to Home Page to ensure consistency across website to improve UX
 - Welcome message now has "User's Homepage" to indicate logged in
-- Search bar to allow user 
+- Search bar to allow user to filter for recipes/ dishes/ ingredients they would want
+- 'More' button on individual dish cards leads to Recipe page
+</details><br>
 
+<details>
+<summary>Recipe Page</summary>
 
-(description of each page, and image)
+- Image of dish
+- 'Edit' and 'Delete' for creator of recipe, or admin
+- Ingredients, recipe and equipment information
+</details><br>
+
+<details>
+<summary>Create / Edit Recipe Page</summary>
+
+- Region dropdown field
+- Dish Name field (text)
+- Ingredients field (text)
+- Equipment field (text)
+- Description field (Text)
+- URL field for image (URL)
+- All fields prepopulate if on Edit Recipe page
+</details><br>
 
 Skeleton (wireframes)
 
@@ -135,3 +162,6 @@ As a business owner of the site, I want:
 -----
 
 ## Credits
+### Websites used
+[Adding dropdowns in README.md](https://dev.to/asyraf/how-to-add-dropdown-in-markdown-o78)
+[Hello Fresh](https://www.hellofresh.co.uk/) - for recipe ideas and images
