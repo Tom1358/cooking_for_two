@@ -81,7 +81,23 @@ As a business owner of the site, I want:
 - All fields prepopulate if on Edit Recipe page
 </details><br>
 
-Skeleton (wireframes)
+### Wireframes for skeleton of website
+[Home Page (top)](static/wireframes/edit_recipe_page.png)
+
+[Home Page (scrolled down)](static/wireframes/home_page_scrolled_down.png)
+
+[Log In Page](static/wireframes/log_in_page.png)
+
+[Sign Up Page](static/wireframes/sign_up_page.png)
+
+[Recipe Page](static/wireframes/recipe_page.png)
+
+[Edit Recipe Page](static/wireframes/edit_recipe_page.png)
+
+[Upload Recipe Page](static/wireframes/upload_recipe_page.png)
+
+[Shop Page](static/wireframes/shop_page.png)
+
 
 Surface (colour and styling, language & tone, Styling considerations)
 
