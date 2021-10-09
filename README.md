@@ -129,30 +129,54 @@ I originally planned to use [this logo](static/images/logo.png) but eventually d
 -----
 
 ## Technologies used
-    Languages
-    Libraries
-        Bootstrap
-        Font Awesome
-        Google Fonts
-        jQuery
-        Flask
-        Werkzeug (manage user management integrity)
-    Editors
-        GitHub
-        GitPod
-        dbDiagram
-        Balsamiq
-    Tools
-        Flask-Paginate
-        TinyPNG/ TinyJPG
-        Coolers - colour palette generation
-        Image colour picker (from logo)
-        Real Favicon Generator
-        Am I Responsive?
-    Database Management
-        MongoDB
-    Deployment Platform
-        Heroku
+<details>
+<summary>Languages</summary>
+
+- HTML5 (for content/ structure)
+- CSS3 (for styling)
+- JavaScript (for interactive elements, e.g. buttons)
+- Python (for core site functionality including user login and accessing database information)
+- Jinja (for generating HTML from site templates)
+</details><br>
+
+<details>
+<summary>Libraries</summary>
+    
+- Bootstrap
+- Font Awesome
+- jQuery (for Bootstrap)
+- Flask
+- Werkzeug
+</details><br>
+
+<details>
+<summary>Editors</summary>
+
+- GitHub - code repository with version control management
+- GitPod - IDE for writing and editing code
+- dbDiagram - for planning DB structure
+- Balsamiq - wireframes for visual planning of website structure
+</details><br>
+
+<details>
+<summary>Tools</summary>
+
+- TinyPNG/ TinyJPG - to reduce size of images & wireframes
+- Coolers - colour palette generation to find appropriate colour scheme for site
+- Am I Responsive? - for screenshots of site for Readme
+</details><br>
+
+<details>
+<summary>Database Management</summary>
+
+- MongoDB - for storing user profile and recipe information
+</details><br>
+
+<details>
+<summary>Deployment Platform</summary>
+
+- Heroku - for hosting website
+</details><br>
 
 -----
 
