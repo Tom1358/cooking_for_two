@@ -99,7 +99,19 @@ As a business owner of the site, I want:
 [Shop Page](static/wireframes/shop_page.png)
 
 
-Surface (colour and styling, language & tone, Styling considerations)
+### Surface 
+#### Colour and Styling 
+I originally planned to use [this logo](static/images/logo.png) but eventually decided that the photo-image used on the final website fitted better and looked more professional.  However, the colour theme from this logo was used for the theme of the website, with this [colour palette](static/images/colour_scheme.png) being used with the following colours to give an earthy-theme to the site:
+- #E88468 - pastel red
+- #577590 - pastel blue
+- #9FB37F - pastel green
+- #EAC576 - pastel yellow
+- #583B23 - dark brown
+- black and white where necessary for maximum contrast
+
+#### Language & tone
+
+#### Styling considerations
 
 -----
 
