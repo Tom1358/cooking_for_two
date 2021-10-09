@@ -211,6 +211,43 @@ As a business owner of the site, I want:
 
 ## Deployment
 
+### Application Hosting
+
+The site is hosted using Heroku, deployed from the master branch of GitHub, and updates automatically as new commits are pushed.  
+
+To create a Heroku app:
+- From heroku.com, sign in to your account (or create a new one if needed).
+- Select 'new' and '[create new app](static/deployment/No1.PNG)'
+- Select '[deploy to GitHub](static/deployment/No2.PNG)' and select your repository and project name.  Select `connect`.
+
+### Environmental variables:
+- In the terminal window of your IDE, type in:
+
+    `pip3 freeze --local > requirements.txt` (this creates a file with the required modules for Heroku)
+    `python3 app.py > Procfile` (this creates a file that tells Heroku how to launch the app)
+    touch .gitignore (creates file including the files/ directories to be excluded from live development)
+
+- Ensure that your `env.py` file is listed in this .gitignore file.
+- `env.py` should include the following:
+
+        import os
+        os.environ.setdefault("IP", "0.0.0.0")
+        os.environ.setdefault("PORT", "5000")
+        os.environ.setdefault("SECRET_KEY", "")
+        os.environ.setdefault("MONGO_URI", "")
+        os.environ.setdefault("MONGO_DBNAME", "")
+- For the final 3 variables, these should be unique identifiers to your project, which will be aligned with the Heroku variables (see below).
+
+- Back on the Heroku dashboard, select `settings` and '[config vars](static/deployment/No3.PNG)'
+- Fill in these [environment variables](static/deployment/No4.PNG) from your `env.py` file
+
+### MongoDB
+
+- Sign in or register with MongoDB at mongodb.com.
+- Create a cluster, then a database.
+- Within this database, create as many collections needed - these would be groups of information, e.g. `users` for one collection, `dishes` for another, `categories` for another.
+- Within each collection, add values required.  These can be various types of information, e.g. strings/ arrays, dictionaries.
+
 -----
 
 ## Credits
