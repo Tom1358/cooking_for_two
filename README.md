@@ -182,7 +182,7 @@ I originally planned to use [this logo](static/images/logo.png) but eventually d
 
 ## Testing
 
-Automatic Testing
+### Automatic Testing
 
 User Stories Testing
 As a user of the site, I want:
@@ -214,6 +214,25 @@ As a business owner of the site, I want:
 -----
 
 ## Credits
-### Websites used
-[Adding dropdowns in README.md](https://dev.to/asyraf/how-to-add-dropdown-in-markdown-o78)
-[Hello Fresh](https://www.hellofresh.co.uk/) - for recipe ideas and images
+
+### Design and Research
+
+- [Code Institute](https://codeinstitute.net/) - particularly the Backend Development Mini Project
+- [Wanderlust Recipes](https://wanderlust-recipes.herokuapp.com/recipes) - MS3 Project by Russell Oakham, used for reference and inspiration
+
+### Content
+
+- [Hello Fresh](https://www.hellofresh.co.uk/) - for recipe ideas and images
+- fontawesome.com for icons
+- All other content written by myself
+
+### Structure
+
+- startbootstrap.com for modified structure of [home page](https://startbootstrap.com/previews/modern-business) and [individual recipe page](https://startbootstrap.com/previews/small-business)
+- bootsnip.com for structure/ idea of [forms with background image](https://bootsnipp.com/snippets/vl4R7)
+- https://codingyaar.com/bootstrap-4-card-image-left-responsive/ - for effective structure of formatting cards for recipes
+- Article on [Adding dropdowns in README.md](https://dev.to/asyraf/how-to-add-dropdown-in-markdown-o78)
+
+
+
+
