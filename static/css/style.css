@@ -158,3 +158,9 @@ a:hover {
 .with-space {
     margin: 5px;
 }
+
+/*-------- label for text inputs on forms to have their own line --------*/
+
+.recipe-label {
+    width: 100%;
+}

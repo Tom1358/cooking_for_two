@@ -11,6 +11,7 @@
 
                 <!-- Region for user to input -->
                 <div class="input-group form-group">
+                    <label for="region" class="recipe-label text-white">Region</label>
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-globe-americas"></i></span>
                     </div>
@@ -27,42 +28,55 @@
 
                 <!-- Dish Name for user to input -->
                 <div class="input-group form-group">
+                    <label for="dish_name" class="recipe-label text-white">Dish Name</label>
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-utensils"></i></span>
                     </div>
-                    <label for="dish_name">Dish Name</label>
+                    
                     <input id="dish_name" name="dish_name" type="text" class="form-control validate" minlength="5"
                         maxlength="35" placeholder="Fried Eggs" required>
                 </div></br>
 
                 <!-- Ingredients for user to input -->
                 <div class="input-group form-group">
+
+                    <label for="Ingredients" class="recipe-label text-white">Ingredients</label>
+
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-utensil-spoon"></i></span>
                     </div>
-                    <label for="Ingredients">Ingredients</label>
+                    
                     <input id="ingredients" name="ingredients" type="text" class="form-control validate" minlength="5"
                         maxlength="35" placeholder="Eggs" required>
+
+                    <!-- plus and minus buttons -->
                     <div class="input-group-prepend">
                         <span class="input-group-text"><a id="add_row"><i class="fas fa-plus"></i></a></span>
                     </div>
                     <div class="input-group-prepend">
                         <span class="input-group-text"><a id="add_row"><i class="fas fa-minus"></i></a></span>
                     </div>
+
                 </div></br>
 
                 <!-- Equipment for user to input -->
                 <div class="input-group form-group">
+
+                    <label for="equipment" class="recipe-label text-white">Equipment</label>
+
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-mortar-pestle"></i></span>
                     </div>
-                    <label for="equipment">Equipment</label>
+                    
                     <input id="equipment" name="equipment" type="text" class="form-control validate" minlength="5"
                         maxlength="35" placeholder="Frying Pan" required>
+
                 </div></br>
 
                 <!-- Description for user to input -->
                 <div class="input-group form-group">
+
+                    <label for="description" class="recipe-label text-white">Description</label>
                     
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fab fa-gripfire"></i></span>
@@ -70,17 +84,21 @@
                     
                     <input id="description" name="description" type="text" class="form-control validate" minlength="5"
                         maxlength="100" placeholder="The classic breakfast to help you wake up in the morning" required></br>
-                    <label for="description">Description</label>
+                    
                 </div></br>
 
                 <!-- Image for user to input -->
                 <div class="input-group form-group">
+
+                    <label for="image" class="recipe-label text-white">URL for image</label>
+
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-image"></i></span>
                     </div>
-                    <label for="image">URL for image</label>
+                    
                     <input id="image" name="image" type="url" class="form-control validate" minlength="5"
                         maxlength="100" placeholder="url for image">
+
                 </div></br>
 
                 <!-- Complete Button -->
@@ -88,7 +106,9 @@
                     <button type="submit" id="submit"
                         class="btn pastel-red col-8 offset-2 active-button:active active-button:hover">Complete</button>
                 </div></br>
+
             </form>
+
             <div class="card-footer">
                 <div class="d-flex justify-content-center links text-white">
                     <a href="{{ url_for('dishes') }}" class="text-pastel-yellow">Cancel</a>
