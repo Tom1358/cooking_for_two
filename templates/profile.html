@@ -37,44 +37,50 @@
 <br>
 
 <!-- receipes are listed -->
-<section id="recipes">
-    {% for dish in dishes %}
-        <!-- Image on left -->
-        {% if loop.index % 2 !=0 %}
-        <div class="card recipe-card col-10 offset-1">
-            <img src="/static/images/{{ dish.dish_name.lower() }}.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h3 class="card-title">{{ dish.dish_name }}</a></h3>
-                <h5 class="card-title">{{ dish.region }}</h5>
-                <p class="card-text text-right">{{ dish.description }}</p>
-                <p class="card-text text-right">by: {{ dish.created_by }}</p>
-                <a href="{{ url_for('individual_recipe', recipe_id=dish._id) }}" class="btn pastel-red btn-lg px-4 me-sm-3 active-button">More</a>
-                <!-- 'Edit' and 'Delete' buttons appear if created by session user -->
-                {% if session.user|lower == dish.created_by|lower %}
-                    <a href="{{ url_for('edit_recipe', recipe_id=dish._id) }}" class="btn pastel-blue btn-lg px-4 me-sm-3 active-button text-white">Edit</a>
-                    <a href="{{ url_for('delete_recipe', recipe_id=dish._id) }}" class="btn pastel-blue btn-lg px-4 me-sm-3 active-button text-white">Delete</a>
-                {% endif %}
+{% if dishes|length > 0 %}
+    <section id="recipes">
+        {% for dish in dishes %}
+            <!-- Image on left -->
+            {% if loop.index % 2 !=0 %}
+            <div class="card recipe-card col-10 offset-1">
+                <img src="/static/images/{{ dish.dish_name.lower() }}.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h3 class="card-title">{{ dish.dish_name }}</a></h3>
+                    <h5 class="card-title">{{ dish.region }}</h5>
+                    <p class="card-text text-right">{{ dish.description }}</p>
+                    <p class="card-text text-right">by: {{ dish.created_by }}</p>
+                    <a href="{{ url_for('individual_recipe', recipe_id=dish._id) }}" class="btn pastel-red btn-lg px-4 me-sm-3 active-button">More</a>
+                    <!-- 'Edit' and 'Delete' buttons appear if created by session user -->
+                    {% if session.user|lower == dish.created_by|lower %}
+                        <a href="{{ url_for('edit_recipe', recipe_id=dish._id) }}" class="btn pastel-blue btn-lg px-4 me-sm-3 active-button text-white">Edit</a>
+                        <a href="{{ url_for('delete_recipe', recipe_id=dish._id) }}" class="btn pastel-blue btn-lg px-4 me-sm-3 active-button text-white">Delete</a>
+                    {% endif %}
+                </div>
             </div>
-        </div>
-        {% else %}
-        <!-- Image on right -->
-        <div class="card recipe-card col-10 offset-1">
-            <div class="card-body">
-                <h3 class="card-title">{{ dish.dish_name }}</a></h3>
-                <h5 class="card-title">{{ dish.region }}</h5>
-                <p class="card-text">{{ dish.description }}</p>
-                <p class="card-text text-right">by: {{ dish.created_by }}</p>
-                <a href="{{ url_for('individual_recipe', recipe_id=dish._id) }}" class="btn pastel-red btn-lg px-4 me-sm-3 active-button">More</a>
-                {% if session.user|lower == dish.created_by|lower %}
-                    <a href="{{ url_for('edit_recipe', recipe_id=dish._id) }}" class="btn pastel-blue btn-lg px-4 me-sm-3 active-button text-white">Edit</a>
-                    <a href="{{ url_for('delete_recipe', recipe_id=dish._id) }}" class="btn pastel-blue btn-lg px-4 me-sm-3 active-button text-white">Delete</a>
-                {% endif %}
+            {% else %}
+            <!-- Image on right -->
+            <div class="card recipe-card col-10 offset-1">
+                <div class="card-body">
+                    <h3 class="card-title">{{ dish.dish_name }}</a></h3>
+                    <h5 class="card-title">{{ dish.region }}</h5>
+                    <p class="card-text">{{ dish.description }}</p>
+                    <p class="card-text text-right">by: {{ dish.created_by }}</p>
+                    <a href="{{ url_for('individual_recipe', recipe_id=dish._id) }}" class="btn pastel-red btn-lg px-4 me-sm-3 active-button">More</a>
+                    {% if session.user|lower == dish.created_by|lower %}
+                        <a href="{{ url_for('edit_recipe', recipe_id=dish._id) }}" class="btn pastel-blue btn-lg px-4 me-sm-3 active-button text-white">Edit</a>
+                        <a href="{{ url_for('delete_recipe', recipe_id=dish._id) }}" class="btn pastel-blue btn-lg px-4 me-sm-3 active-button text-white">Delete</a>
+                    {% endif %}
+                </div>
+                <img src="/static/images/{{ dish.dish_name.lower() }}.jpg" class="card-img-top" alt="...">
             </div>
-            <img src="/static/images/{{ dish.dish_name.lower() }}.jpg" class="card-img-top" alt="...">
-        </div>
 
-        {% endif %}
-    {% endfor %}
-</section>
+            {% endif %}
+        {% endfor %}
+    </section>
+
+{% else %}
+    <h3>No Results Found</h3>
+
+{% endif %}
 
 {% endblock %}
