@@ -62,6 +62,7 @@
     {% for dish in dishes %}
 
         {% if loop.index % 2 !=0 %}
+        <!-- Image on left -->
         <div class="card recipe-card col-10 offset-1">
             <img src="static/images/{{ dish.dish_name.lower() }}.jpg" class="card-img-top" alt="...">
             <div class="card-body">
@@ -73,6 +74,7 @@
             </div>
         </div>
         {% else %}
+        <!-- Image on right -->
         <div class="card recipe-card col-10 offset-1">
             <div class="card-body">
                 <h3 class="card-title"><a href="{{ url_for('register') }}">{{ dish.dish_name }}</a></h3>
