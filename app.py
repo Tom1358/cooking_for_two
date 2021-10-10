@@ -99,6 +99,13 @@ def logout():
     return redirect(url_for("login"))
 
 
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    dishes = list(mongo.db.dishes.find({"$text": {"$search": query}}))
+    return render_template("profile.html", dishes=dishes)
+
+
 @app.route("/recipe/<recipe_id>")
 def individual_recipe(recipe_id):
     # grab recipe name from database
