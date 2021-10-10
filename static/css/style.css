@@ -168,3 +168,11 @@ a:hover {
 .full-width {
     flex: 1 1 auto;
 }
+
+/*-------- search box in profile.html --------*/
+
+.centre-input {
+    display: flex;
+    margin: auto;
+    width: 70%;
+}
