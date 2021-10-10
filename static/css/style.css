@@ -164,3 +164,7 @@ a:hover {
 .recipe-label {
     width: 100%;
 }
+
+.full-width {
+    flex: 1 1 auto;
+}
