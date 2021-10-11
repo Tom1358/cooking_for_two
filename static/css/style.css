@@ -101,6 +101,12 @@ a:hover {
     color:rgba(0, 0, 0, 0.5)
 }
 
+/*-------- Add curve to images of dishes on homepage --------*/
+
+.dish-image {
+    border-radius: 5%;
+}
+
 /*-------- Resizing Font Awesome icons --------*/
 
 .input-group-text {
