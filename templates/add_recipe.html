@@ -113,7 +113,7 @@
 
             <div class="card-footer">
                 <div class="d-flex justify-content-center links text-white">
-                    <a href="{{ url_for('dishes') }}" class="text-pastel-yellow">Cancel</a>
+                    <a href="{{ url_for('profile', username=session['user']) }}" class="text-pastel-yellow">Cancel</a>
                 </div>
             </div>
         </div>
