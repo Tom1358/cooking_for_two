@@ -45,7 +45,7 @@
             <!-- Image on left -->
             {% if loop.index % 2 !=0 %}
             <div class="card recipe-card col-10 offset-1">
-                <img src="/static/images/{{ dish.dish_name.lower() }}.jpg" class="card-img-top dish-image" alt="Image of Dish">
+                <img src="{{ dish.image }}" class="card-img-top dish-image" alt="Image of Dish">
                 <div class="card-body">
                     <h3 class="card-title">{{ dish.dish_name }}</a></h3>
                     <h5 class="card-title">{{ dish.region }}</h5>
@@ -73,7 +73,7 @@
                         <a href="{{ url_for('delete_recipe', recipe_id=dish._id) }}" class="btn pastel-blue btn-lg px-4 me-sm-3 active-button text-white">Delete</a>
                     {% endif %}
                 </div>
-                <img src="/static/images/{{ dish.dish_name.lower() }}.jpg" class="card-img-top dish-image" alt="Image of Dish">
+                <img src="{{ dish.image }}" class="card-img-top dish-image" alt="Image of Dish">
             </div>
             {% endif %}
     
