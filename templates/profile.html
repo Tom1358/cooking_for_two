@@ -55,7 +55,7 @@
                     <!-- 'Edit' and 'Delete' buttons appear if created by session user -->
                     {% if session.user|lower == dish.created_by|lower %}
                         <a href="{{ url_for('edit_recipe', recipe_id=dish._id) }}" class="btn pastel-blue btn-lg px-4 me-sm-3 active-button text-white">Edit</a>
-                        <a href="#delete-modal" class="btn pastel-blue btn-lg px-4 me-sm-3 active-button text-white">Delete</a>
+                        <a href="#delete-modal" data-toggle="modal" class="btn pastel-blue btn-lg px-4 me-sm-3 active-button text-white">Delete</a>
                     {% endif %}
                 </div>
             </div>
@@ -77,16 +77,7 @@
             </div>
             {% endif %}
     
-    {% endfor %}  
-
-</section>
-
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-    Launch demo modal
-  </button>
-  
-  <!-- Modal -->
+      <!-- Modal -->
   <div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
@@ -104,5 +95,9 @@
       </div>
     </div>
   </div>
+    
+    {% endfor %}  
+
+</section>
 
 {% endblock %}
