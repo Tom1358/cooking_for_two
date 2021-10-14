@@ -37,10 +37,12 @@
 <br>
 
 
-<section id="recipes">
-    {% for dish in dishes %}
+{% if dishes|length != 0 %}
 
+<section id="recipes">
     <!-- receipes are listed -->
+    
+    {% for dish in dishes %}
 
     <!-- Image on left -->
     {% if loop.index % 2 !=0 %}
@@ -81,6 +83,7 @@
         </div>
         <img src="{{ dish.image }}" class="card-img-top dish-image" alt="Image of Dish">
     </div>
+    
     {% endif %}
 
     <!-- Modal -->
@@ -102,9 +105,16 @@
             </div>
         </div>
     </div>
-
+    
     {% endfor %}
+    
+    
 
 </section>
+
+{% else %}
+<h3>Nothing here</h3>
+
+{% endif %}
 
 {% endblock %}
