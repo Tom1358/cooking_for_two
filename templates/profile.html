@@ -36,11 +36,10 @@
 </form>
 <br>
 
-
-{% if dishes|length != 0 %}
+{% if dishes|length > 0 %}
 
 <section id="recipes">
-    <!-- receipes are listed -->
+    <!-- recipes are listed -->
     
     {% for dish in dishes %}
 
@@ -116,5 +115,6 @@
 <h3>Nothing here</h3>
 
 {% endif %}
+
 
 {% endblock %}

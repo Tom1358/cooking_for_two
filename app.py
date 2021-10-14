@@ -21,7 +21,7 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/dishes_list")
 def dishes_list():
-    dishes = mongo.db.dishes.find()
+    dishes = list(mongo.db.dishes.find())
     return render_template("dishes.html", dishes=dishes)
 
 
@@ -84,7 +84,7 @@ def profile(username):
         {"username": session["user"]})["username"]
 
     if session["user"]:
-        dishes = mongo.db.dishes.find()
+        dishes = list(mongo.db.dishes.find())
         return render_template(
             "profile.html", username=username, dishes=dishes)
 
@@ -111,8 +111,6 @@ def search():
 def individual_recipe(recipe_id):
     # grab recipe name from database
     recipe = mongo.db.dishes.find_one({"_id": ObjectId(recipe_id)})
-    print(recipe_id)
-    print(recipe)
     return render_template(
         "individual_recipe.html", recipe=recipe)
 
