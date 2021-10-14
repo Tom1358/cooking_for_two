@@ -19,8 +19,8 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
-@app.route("/dishes")
-def dishes():
+@app.route("/dishes_list")
+def dishes_list():
     dishes = mongo.db.dishes.find()
     return render_template("dishes.html", dishes=dishes)
 
@@ -36,11 +36,11 @@ def register():
             flash("Username Already Exists")
             return redirect(url_for("register"))
 
-        register = {
+        register_user = {
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(request.form.get("password"))
         }
-        mongo.db.users.insert_one(register)
+        mongo.db.users.insert_one(register_user)
 
         # put new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
