@@ -29,12 +29,10 @@
                     <div class="card-body">
                         <h2 class="card-title">Ingredients</h2>
                         <p class="card-text">
-                            {% for dict_item in recipe.ingredients %}
-                                {% for key, value in dict_item.items() %}
-                                    <ul>
-                                        {{key}} - {{ value }}
-                                    </ul>
-                                {% endfor %}
+                            {% for ingredient in recipe.ingredients %}
+                                <ul>
+                                    {{ ingredient }}
+                                </ul>
                             {% endfor %}
                         </p>
                     </div>
