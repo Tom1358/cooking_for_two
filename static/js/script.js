@@ -11,8 +11,8 @@ function addIngredient(){
             <span class="input-group-text"><i class="fas fa-utensil-spoon"></i></span>
         </div>
         
-        <input id="ingredients" name="ingredients" type="text" class="form-control validate" minlength="5"
-            maxlength="35" placeholder="" required>
+        <input id="ingredients" name="ingredients[]" type="text" class="form-control validate" minlength="5"
+            placeholder="" required>
         
         <div class="input-group-prepend">
             <span class="input-group-text"><a id="minus-ingredient"><i class="fas fa-minus"></i></a></span>

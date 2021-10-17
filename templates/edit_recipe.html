@@ -84,6 +84,20 @@
 
                 </div></br>
 
+                <!-- Recipe for user to input -->
+                <div class="input-group form-group">
+
+                    <label for="recipe" class="recipe-label text-white">Recipe</label>
+
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-mortar-pestle"></i></span>
+                    </div>
+
+                    <input id="recipe" name="recipe" value="{{ recipe.recipe }}"type="text" class="form-control validate" minlength="5"
+                        maxlength="200" placeholder="recipe here" required>
+
+                </div></br>
+
                 <!-- Description for user to input -->
                 <div class="input-group form-group">
 
@@ -108,7 +122,7 @@
                     </div>
 
                     <input id="image" name="image" value="{{ recipe.image }}" type="url" class="form-control validate" minlength="5"
-                        maxlength="100" placeholder="url for image">
+                        placeholder="url for image">
 
                 </div></br>
 

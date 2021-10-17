@@ -121,12 +121,9 @@ def add_recipe():
         dish = {
             "region": request.form.get("region"),
             "dish_name": request.form.get("dish_name"),
-            # n.b. here for ingredients, user could create a list of 
-            # ingredients in the form (one at a time),
-            # and then use request.form.getlist() here
-            "ingredients": request.form.get("ingredients"),
-            "recipe": request.form.get("recipe"),
-            "equipment": request.form.get("equipment"),
+            "ingredients": request.form.getlist("ingredients[]"),
+            "recipe": request.form.getlist("recipe[]"),
+            "equipment": request.form.getlist("equipment[]"),
             "description": request.form.get("description"),
             "image": request.form.get("image"),
             "created_by": session["user"]
@@ -147,9 +144,6 @@ def edit_recipe(recipe_id):
         dish = {
             "region": request.form.get("region"),
             "dish_name": request.form.get("dish_name"),
-            # n.b. here for ingredients, user could create a list of 
-            # ingredients in the form (one at a time),
-            # and then use request.form.getlist() here
             "ingredients": request.form.get("ingredients"),
             "recipe": request.form.get("recipe"),
             "equipment": request.form.get("equipment"),
