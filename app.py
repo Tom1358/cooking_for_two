@@ -175,6 +175,17 @@ def delete_recipe(recipe_id):
     return redirect(url_for("profile", username=session["user"]))
 
 
+
+@app.route("/manage_category", methods=["GET", "POST"])
+def manage_category():
+    return render_template("manage_category.html")
+
+
+@app.route("/add_category", methods=["GET", "POST"])
+def add_category():
+    return render_template("add_category.html")
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

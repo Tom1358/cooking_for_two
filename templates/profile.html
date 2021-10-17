@@ -55,11 +55,11 @@
             <a href="{{ url_for('individual_recipe', recipe_id=dish._id) }}"
                 class="btn pastel-red btn-lg px-4 me-sm-3 active-button">More</a>
             <!-- 'Edit' and 'Delete' buttons appear if created by session user -->
-            {% if session.user|lower == dish.created_by|lower %}
-            <a href="{{ url_for('edit_recipe', recipe_id=dish._id) }}"
-                class="btn pastel-blue btn-lg px-4 me-sm-3 active-button text-white">Edit</a>
-            <a href="#delete-modal" data-toggle="modal"
-                class="btn pastel-blue btn-lg px-4 me-sm-3 active-button text-white">Delete</a>
+            {% if session.user|lower == dish.created_by|lower or session.user|lower == "admin" %}
+                <a href="{{ url_for('edit_recipe', recipe_id=dish._id) }}"
+                    class="btn pastel-blue btn-lg px-4 me-sm-3 active-button text-white">Edit</a>
+                <a href="#delete-modal" data-toggle="modal"
+                    class="btn pastel-blue btn-lg px-4 me-sm-3 active-button text-white">Delete</a>
             {% endif %}
         </div>
     </div>
@@ -73,12 +73,11 @@
             <p class="card-text text-right">by: {{ dish.created_by }}</p>
             <a href="{{ url_for('individual_recipe', recipe_id=dish._id) }}"
                 class="btn pastel-red btn-lg px-4 me-sm-3 active-button">More</a>
-            {% if session.user|lower == dish.created_by|lower %}
-            
-            <a href="{{ url_for('edit_recipe', recipe_id=dish._id) }}"
-                class="btn pastel-blue btn-lg px-4 me-sm-3 active-button text-white">Edit</a>
-            <a href="#delete-modal" data-toggle="modal"
-                class="btn pastel-blue btn-lg px-4 me-sm-3 active-button text-white">Delete</a>
+            {% if session.user|lower == dish.created_by|lower or session.user|lower == "admin" %}
+                <a href="{{ url_for('edit_recipe', recipe_id=dish._id) }}"
+                    class="btn pastel-blue btn-lg px-4 me-sm-3 active-button text-white">Edit</a>
+                <a href="#delete-modal" data-toggle="modal"
+                    class="btn pastel-blue btn-lg px-4 me-sm-3 active-button text-white">Delete</a>
             {% endif %}
         </div>
         <img src="{{ dish.image }}" class="card-img-top dish-image" alt="Image of Dish">

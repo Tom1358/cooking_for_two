@@ -5,19 +5,20 @@
 
     <div class="card register-card col-6 offset-3">
         <div class="card-body">
-            <h2 class="card-title text-white">New Region/ Category</h2></br>
+            <h2 class="card-title text-white">New Category/ Region</h2></br>
             <h4 class="card-subtitle mb-2 text-white">Fill in the following details</h4></br>
             <form method="POST" action="{{ url_for('add_category') }}">
 
-                <!-- Dish Name for user to input -->
+                
+                <!-- new region for admin to input -->
                 <div class="input-group form-group">
                     <label for="region" class="recipe-label text-white">Region</label>
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-globe-americas"></i></span>
                     </div>
                     
-                    <input id="category_name" name="category_name" type="text" class="form-control validate" minlength="5"
-                        maxlength="25" placeholder="British" required>
+                    <input id="region" name="region" type="text" class="form-control validate" minlength="5"
+                        maxlength="25" placeholder="Fried Eggs" required>
                 </div></br>
 
                 <!-- Complete Button -->
