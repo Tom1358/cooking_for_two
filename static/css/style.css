@@ -91,7 +91,7 @@ a:hover {
     background-image: url('/static/images/generic_photo.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-    height: 100vh;
+    height: 100%;
 }
 
 .banner-background-image {
