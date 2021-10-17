@@ -5,132 +5,18 @@
 
     <div class="card register-card col-6 offset-3">
         <div class="card-body">
-            <h2 class="card-title text-white">Categories/ Regions</h2></br>
-            <h4 class="card-subtitle mb-2 text-white">Fill in the following details</h4></br>
+            <h2 class="card-title text-white">Manage Categories/ Regions</h2></br>
             <form method="POST" action="{{ url_for('manage_category') }}">
+                {% for category in categories %}
+                    <div class="card">
+                        <div class="card-body manage-category">
+                            <h5 class="card-title">{{ category.region }}</h5>
+                            <a href="#" class="card-link">Card link</a>
+                            <a href="#" class="card-link">Another link</a>
 
-                <!-- Region for user to input -->
-                <div class="input-group form-group">
-                    <label for="region" class="recipe-label text-white">Region</label>
-
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"><i class="fas fa-globe-americas"></i></span>
+                        </div>
                     </div>
-
-                    <div class="form-group full-width">
-                        <select class="form-control" id="region" name="region">
-                            <option selected disabled>Region</option>
-                                {% for category in categories %}
-                                    <option value="{{ category.region  }}">{{ category.region }}</option>
-                                {% endfor %}
-                            </div>
-                        </select>
-                    </div>
-                </div></br>
-
-                <!-- Dish Name for user to input -->
-                <div class="input-group form-group">
-                    <label for="dish_name" class="recipe-label text-white">Dish Name</label>
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"><i class="fas fa-utensils"></i></span>
-                    </div>
-                    
-                    <input id="dish_name" name="dish_name" type="text" class="form-control validate" minlength="5"
-                        maxlength="35" placeholder="Fried Eggs" required>
-                </div></br>
-
-                <!-- Ingredients for user to input -->
-                <div class="input-group form-group">
-
-                    <label for="Ingredients" class="recipe-label text-white">Ingredients</label>
-
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"><i class="fas fa-utensil-spoon"></i></span>
-                    </div>
-                    
-                    <input id="ingredients" name="ingredients" type="text" class="form-control validate" minlength="5"
-                        maxlength="35" placeholder="Eggs" required>
-
-                    <!-- plus and minus buttons -->
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"><a id="add-ingredient"><i class="fas fa-plus"></i></a></span>
-                    </div>
-                    <div class="input-group-prepend" hidden>
-                        <span class="input-group-text"><a id="minus-ingredient"><i class="fas fa-minus"></i></a></span>
-                    </div>
-
-                </div>
-
-                <div id="add-ingredient-div">
-                </div></br>
-
-                <!-- Recipe for user to input -->
-                <div class="input-group form-group">
-
-                    <label for="recipe" class="recipe-label text-white">Recipe</label>
-
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"><i class="fas fa-list-ol"></i></span>
-                    </div>
-                    
-                    <input id="recipe" name="recipe" type="text" class="form-control validate" minlength="5"
-                        maxlength="200" placeholder="Your recipe here" required>
-
-                    <!-- plus and minus buttons -->
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"><a id="add-recipe"><i class="fas fa-plus"></i></a></span>
-                    </div>
-                    <div class="input-group-prepend" hidden>
-                        <span class="input-group-text"><a id="minus-recipe"><i class="fas fa-minus"></i></a></span>
-                    </div>
-
-                </div>
-
-                <div id="add-recipe-div">
-                </div></br>
-
-                <!-- Equipment for user to input -->
-                <div class="input-group form-group">
-
-                    <label for="equipment" class="recipe-label text-white">Equipment</label>
-
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"><i class="fas fa-mortar-pestle"></i></span>
-                    </div>
-                    
-                    <input id="equipment" name="equipment" type="text" class="form-control validate" minlength="5"
-                        maxlength="35" placeholder="Frying Pan" required>
-
-                </div></br>
-
-                <!-- Description for user to input -->
-                <div class="input-group form-group">
-
-                    <label for="description" class="recipe-label text-white">Description</label>
-                    
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"><i class="fab fa-gripfire"></i></span>
-                    </div>
-                    
-                    <input id="description" name="description" type="text" class="form-control validate" minlength="5"
-                        maxlength="100" placeholder="The classic breakfast to help you wake up in the morning" required></br>
-                    
-                </div></br>
-
-                <!-- Image for user to input -->
-                <div class="input-group form-group">
-
-                    <label for="image" class="recipe-label text-white">URL for image</label>
-
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"><i class="fas fa-image"></i></span>
-                    </div>
-                    
-                    <input id="image" name="image" type="url" class="form-control validate" minlength="5"
-                        maxlength="100" placeholder="url for image">
-
-                </div></br>
-
+                {% endfor %}
                 <!-- Complete Button -->
                 <div class="form-group">
                     <button type="submit" id="submit"
