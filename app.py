@@ -125,6 +125,7 @@ def add_recipe():
             # ingredients in the form (one at a time),
             # and then use request.form.getlist() here
             "ingredients": request.form.get("ingredients"),
+            "recipe": request.form.get("recipe"),
             "equipment": request.form.get("equipment"),
             "description": request.form.get("description"),
             "image": request.form.get("image"),
@@ -150,6 +151,7 @@ def edit_recipe(recipe_id):
             # ingredients in the form (one at a time),
             # and then use request.form.getlist() here
             "ingredients": request.form.get("ingredients"),
+            "recipe": request.form.get("recipe"),
             "equipment": request.form.get("equipment"),
             "description": request.form.get("description"),
             "image": request.form.get("image"),

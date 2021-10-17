@@ -1,9 +1,6 @@
 let addIngredientDiv = document.getElementById("add-ingredient-div");
 
-// document.getElementById("minus-ingredient").addEventListener('click', minusIngredientFunction);
-
-
-
+document.getElementById("minus-ingredient").addEventListener('click', minusIngredientFunction);
 
 function addIngredient(){
     console.log("Add button clicked")
@@ -32,6 +29,6 @@ function minusIngredientFunction(){
     // this.remove(deleteItem);
 }
 
-// document.getElementById("add-ingredient").addEventListener("click", addIngredient);
+document.getElementById("add-ingredient").addEventListener("click", addIngredient);
 
 

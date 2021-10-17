@@ -64,6 +64,31 @@
                 <div id="add-ingredient-div">
                 </div></br>
 
+                <!-- Recipe for user to input -->
+                <div class="input-group form-group">
+
+                    <label for="recipe" class="recipe-label text-white">Recipe</label>
+
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-list-ol"></i></span>
+                    </div>
+                    
+                    <input id="recipe" name="recipe" type="text" class="form-control validate" minlength="5"
+                        maxlength="200" placeholder="Your recipe here" required>
+
+                    <!-- plus and minus buttons -->
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><a id="add-recipe"><i class="fas fa-plus"></i></a></span>
+                    </div>
+                    <div class="input-group-prepend" hidden>
+                        <span class="input-group-text"><a id="minus-recipe"><i class="fas fa-minus"></i></a></span>
+                    </div>
+
+                </div>
+
+                <div id="add-recipe-div">
+                </div></br>
+
                 <!-- Equipment for user to input -->
                 <div class="input-group form-group">
 
