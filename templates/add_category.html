@@ -2,39 +2,50 @@
 {% block content %}
 
 <div class="full-background-image">
-
+    <!-- Title -->
     <div class="card register-card col-6 offset-3">
         <div class="card-body">
             <h2 class="card-title text-white">New Category/ Region</h2></br>
             <h4 class="card-subtitle mb-2 text-white">Fill in the following details</h4></br>
+            
+            <!-- Beginning of form -->
             <form method="POST" action="{{ url_for('add_category') }}">
 
-                
                 <!-- new region for admin to input -->
                 <div class="input-group form-group">
+                    
                     <label for="region" class="recipe-label text-white">Region</label>
+
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-globe-americas"></i></span>
                     </div>
                     
                     <input id="region" name="region" type="text" class="form-control validate" minlength="5"
                         maxlength="25" placeholder="Region" required>
+
                 </div></br>
 
                 <!-- Complete Button -->
                 <div class="form-group">
-                    <button type="submit" id="submit"
+
+                    <button type="submit" id="submit" 
                         class="btn pastel-red col-8 offset-2 active-button:active active-button:hover">Complete</button>
+
                 </div></br>
 
             </form>
 
+            <!-- Cancel button -->
             <div class="card-footer">
+
                 <div class="d-flex justify-content-center links text-white">
                     <a href="{{ url_for('profile', username=session['user']) }}" class="text-pastel-yellow">Cancel</a>
                 </div>
+
             </div>
+
         </div>
+        
     </div>
 
 </div>
