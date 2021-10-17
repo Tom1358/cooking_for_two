@@ -4,29 +4,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <!-- FontAwesome link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" 
         integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" 
         crossorigin="anonymous" referrerpolicy="no-referrer" type="text/css" />
+
     <!-- Bootstrap link -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" 
         integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous" 
         type="text/css">
+
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
+
     {% block styles %}
     {% endblock %}
+
     <title>Cooking for Two</title>
 </head>
 
 <body>
     
-    <!-- top bar -->
+    <!-- Bootstrap top bar -->
     <nav class="navbar navbar-expand-lg navbar-dark pastel-blue">
         <div class="container px-5">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <span class="navbar-text text-white">
+                    <!-- Flashed messages to left of navbar -->
                     {% with messages = get_flashed_messages() %}
                         {% if messages %}
                             {% for message in messages %}
@@ -37,22 +43,29 @@
                   </span>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <!-- Session user has option to go to their profile or log out -->
                     {% if session.user %}
                         <li class="nav-item"><a class="nav-link" href="{{ url_for('profile', username=session['user']) }}">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{ url_for('logout') }}">Logout</a></li>
+                        
+                        <!-- Admin can manage categories/ regions -->
                         {% if session.user|lower == "admin"|lower %}
                             <li class="nav-item"><a class="nav-link" href="{{ url_for('manage_category') }}">Manage Categories</a></li>
                         {% endif %}
+
                     {% else %}
+                        <!-- Users not logged in only have options to view what dishes there are, register, or log in -->
                         <li class="nav-item"><a class="nav-link" href="{{ url_for('dishes_list') }}">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{ url_for('register') }}">Register</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{ url_for('login') }}">Login</a></li>
                     {% endif %}
+
                 </ul>
             </div>
         </div>
     </nav>
 
+    <!-- Block content for templates -->
     {% block content %}
     {% endblock %}
 
