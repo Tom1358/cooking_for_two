@@ -178,7 +178,7 @@ def delete_recipe(recipe_id):
 
 @app.route("/manage_category")
 def manage_category():
-    categories = list(mongo.db.categories.find())
+    categories = list(mongo.db.categories.find().sort("region", 1))
     return render_template("manage_category.html", categories=categories)
 
 
@@ -211,7 +211,7 @@ def edit_category(category_id):
 def delete_category(category_id):
     mongo.db.categories.remove({"_id": ObjectId(category_id)})
     flash("Region Successfully Deleted")
-    return redirect(url_for("manage_category")
+    return redirect(url_for("manage_category"))
 
 
 if __name__ == "__main__":
