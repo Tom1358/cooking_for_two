@@ -187,3 +187,14 @@ a:hover {
     text-align: center;
     margin-top: 20px;;
 }
+
+
+/*-------- display links and titles of categories in manage-categories.html in one line --------*/
+
+.region-control {
+    display: inline-block;
+}
+
+.float-right {
+    float: right;
+}
