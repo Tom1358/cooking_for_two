@@ -41,6 +41,9 @@
 
             <div class="card-footer">
                 <div class="d-flex justify-content-center links text-white">
+                    <a href="{{ url_for('add_category') }}" class="text-pastel-yellow">Add a Region</a>
+                </div>
+                <div class="d-flex justify-content-center links text-white">
                     <a href="{{ url_for('profile', username=session['user']) }}" class="text-pastel-yellow">Cancel</a>
                 </div>
             </div>
