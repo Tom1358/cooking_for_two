@@ -176,7 +176,7 @@ def delete_recipe(recipe_id):
 
 
 
-@app.route("/manage_category", methods=["GET", "POST"])
+@app.route("/manage_category")
 def manage_category():
     categories = list(mongo.db.categories.find())
     return render_template("manage_category.html", categories=categories)
@@ -184,7 +184,27 @@ def manage_category():
 
 @app.route("/add_category", methods=["GET", "POST"])
 def add_category():
+    if request.method == "POST":
+        category = {
+            "region": request.form.get("region")
+        }
+        mongo.db.categories.insert_one(category)
+        flash("New Region Added")
+        return redirect(url_for("manage_category"))
     return render_template("add_category.html")
+
+
+@app.route("/edit_category/<category_id>", methods=["GET", "POST"])
+def edit_category(category_id):
+    if request.method == "POST":
+        submit = {
+            "region": request.form.get("region")
+        }
+        mongo.db.categories.update({"_id": ObjectId(category_id)}, submit)
+        flash("Region Successfully Updated")
+        return redirect(url_for('manage_category'))
+    category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
+    return render_template("edit_category.html", category=category)
 
 
 if __name__ == "__main__":

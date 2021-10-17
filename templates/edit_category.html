@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="full-background-image">
+
+    <div class="card register-card col-6 offset-3">
+        <div class="card-body">
+            <h2 class="card-title text-white">Category/ Region</h2></br>
+            <h4 class="card-subtitle mb-2 text-white">Update the following details</h4></br>
+            <form method="POST" action="{{ url_for('edit_category', category_id=category._id) }}">
+
+                
+                <!-- region for admin to update -->
+                <div class="input-group form-group">
+                    <label for="region" class="recipe-label text-white">Region</label>
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-globe-americas"></i></span>
+                    </div>
+                    
+                    <input id="region" name="region" type="text" class="form-control validate" minlength="5"
+                        maxlength="25" value="{{ category.region }}">
+                </div></br>
+
+                <!-- Complete Button -->
+                <div class="form-group">
+                    <button type="submit" id="submit"
+                        class="btn pastel-red col-8 offset-2 active-button:active active-button:hover">Complete</button>
+                </div></br>
+
+            </form>
+
+            <div class="card-footer">
+                <div class="d-flex justify-content-center links text-white">
+                    <a href="{{ url_for('manage_category') }}" class="text-pastel-yellow">Cancel</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
