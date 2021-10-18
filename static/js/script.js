@@ -1,7 +1,6 @@
 let addIngredientDiv = document.getElementById("add-ingredient-div");
 
-document.getElementById("minus-ingredient").addEventListener('click', minusIngredientFunction);
-
+// function if add button is pressed
 function addIngredient(){
     console.log("Add button clicked")
     let newIngredient = `
@@ -15,20 +14,29 @@ function addIngredient(){
             placeholder="" required>
         
         <div class="input-group-prepend">
-            <span class="input-group-text"><a id="minus-ingredient"><i class="fas fa-minus"></i></a></span>
+            <span class="input-group-text"><a class="minus-ingredient"><i class="fas fa-minus"></i></a></span>
         </div>
         
         </div>
     `
-    addIngredientDiv.innerHTML += newIngredient
+    let extraItem = document.createElement("div")
+    extraItem.innerHTML += newIngredient
+    addIngredientDiv.appendChild(extraItem)
+
+    
 }
 
+// function if minus button pressed
 function minusIngredientFunction(){
-    console.log("Minus button clicked")
-    // let deleteItem = document.getElementById("extra-item")
-    // this.remove(deleteItem);
+    console.log("minus button clicked")
 }
 
-document.getElementById("add-ingredient").addEventListener("click", addIngredient);
+// document.getElementById("add-ingredient").addEventListener("click", addIngredient);
 
+// document.getElementsByClassName("minus-ingredient").addEventListener("click", minusIngredientFunction);
 
+// document.addEventListener('click', function() {
+// let minusIngredient = document.getElementsByClassName("minus-ingredient")
+
+// console.log("Minus button clicked")
+// })
