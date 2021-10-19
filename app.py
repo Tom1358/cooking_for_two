@@ -21,14 +21,16 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/dishes_list")
 def dishes_list():
+    """ Homepage for users not logged in """
     dishes = list(mongo.db.dishes.find())
     return render_template("dishes.html", dishes=dishes)
 
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
+    """ Allows user to register to personalise website """
     if request.method == "POST":
-        # check if username already exists in database
+        """ check if username already exists in database """
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
@@ -41,8 +43,7 @@ def register():
             "password": generate_password_hash(request.form.get("password"))
         }
         mongo.db.users.insert_one(register_user)
-
-        # put new user into 'session' cookie
+        """ put new user into 'session' cookie """
         session["user"] = request.form.get("username").lower()
         flash("Registration Successful!")
         return redirect(url_for("profile", username=session["user"]))
@@ -51,13 +52,14 @@ def register():
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
+    """ Allows user to login to their saved profile """
     if request.method == "POST":
-        # check if username exists in database
+        """ check if username exists in database """
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
         if existing_user:
-            # ensure password input matches hashed, saved password
+            """ ensure password input matches hashed, saved password """
             if check_password_hash(
                     existing_user["password"], request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
@@ -66,11 +68,11 @@ def login():
                 return redirect(url_for(
                         "profile", username=session["user"]))
             else:
-                # invalid password match
+                """ invalid password match """
                 flash("Incorrect Username/ Password")
                 return redirect(url_for("login"))
         else:
-            # username doesn't exist
+            """ username doesn't exist """
             flash("Incorrect Username/ Password")
             return redirect(url_for("login"))
 
@@ -79,10 +81,10 @@ def login():
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
-    # grab session user's username from database
+    """ grab session user's username from database """
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
-
+    """ Display user's home profile page """
     if session["user"]:
         dishes = list(mongo.db.dishes.find())
         return render_template(
@@ -93,7 +95,7 @@ def profile(username):
 
 @app.route("/logout")
 def logout():
-    # remove user from session cookies
+    """ remove user from session cookies """
     flash("You have been logged out")
     session.clear()
     return redirect(url_for("login"))
@@ -101,6 +103,7 @@ def logout():
 
 @app.route("/search", methods=["GET", "POST"])
 def search():
+    """ Allows user to search for recipe on their profile page """
     query = request.form.get("query")
     dishes = list(mongo.db.dishes.find({"$text": {"$search": query}}))
     return render_template(
@@ -109,7 +112,7 @@ def search():
 
 @app.route("/recipe/<recipe_id>")
 def individual_recipe(recipe_id):
-    # grab recipe name from database
+    """ Gives details about individual recipe user has chosen """
     recipe = mongo.db.dishes.find_one({"_id": ObjectId(recipe_id)})
     return render_template(
         "individual_recipe.html", recipe=recipe)
@@ -117,6 +120,7 @@ def individual_recipe(recipe_id):
 
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
+    """ Allows user to add recipe to the website """
     if request.method == "POST":
         dish = {
             "region": request.form.get("region"),
@@ -140,6 +144,7 @@ def add_recipe():
 
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
+    """ Allows user to edit a recipe they have uploaded """
     if request.method == "POST":
         dish = {
             "region": request.form.get("region"),
@@ -164,20 +169,22 @@ def edit_recipe(recipe_id):
 
 @app.route("/delete_recipe/<recipe_id>")
 def delete_recipe(recipe_id):
+    """ Allows user to delete recipe they have uploaded """
     mongo.db.dishes.remove({"_id": ObjectId(recipe_id)})
     flash("Dish Successfully Removed")
     return redirect(url_for("profile", username=session["user"]))
 
 
-
 @app.route("/manage_category")
 def manage_category():
+    """ Displays a list of the categories (regions) used by the website """
     categories = list(mongo.db.categories.find().sort("region", 1))
     return render_template("manage_category.html", categories=categories)
 
 
 @app.route("/add_category", methods=["GET", "POST"])
 def add_category():
+    """ Allows a new region to be created """
     if request.method == "POST":
         category = {
             "region": request.form.get("region")
@@ -190,6 +197,7 @@ def add_category():
 
 @app.route("/edit_category/<category_id>", methods=["GET", "POST"])
 def edit_category(category_id):
+    """ Allows a region to be edited """
     if request.method == "POST":
         submit = {
             "region": request.form.get("region")
@@ -203,6 +211,7 @@ def edit_category(category_id):
 
 @app.route("/delete_category/<category_id>")
 def delete_category(category_id):
+    """ Allows a region to be deleted """
     mongo.db.categories.remove({"_id": ObjectId(category_id)})
     flash("Region Successfully Deleted")
     return redirect(url_for("manage_category"))
