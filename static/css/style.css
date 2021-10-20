@@ -195,6 +195,12 @@ a:hover {
     margin-top: 20px;;
 }
 
+@media only screen and (max-width: 600px) {
+    #query-label{
+        display: none;
+    }
+}
+
 
 /*-------- display links and titles of categories in manage_categories.html in one line --------*/
 
