@@ -1,5 +1,17 @@
 # Cooking for Two Testing
 
+## Manual Testing
+### All the following have been confirmed as working and correct:
+-   All navigation links work correctly across all pages, and that mobile navbar (burger bar) works correctly.
+-   User able to register and taken to profile page, and that DB saves information.
+-   Registered user is able to log in and out.
+-   Logged-in user is able to upload a new recipe, and this saves to DB.
+-   User able to edit pre-existing recipe that they have created.  Unable to edit pre-existing recipe created by other user.
+-   User able to delete a recipe they have created; modal offers confirmation step so as not to accidentally delete recipe.
+-   Admin able to edit any recipe, regardless if they have created it or not.
+-   Admin able to delete any recipe, regardless if they have created it or not; modal offering confirmatory step working correctly.
+-   Admin able to view, create new, amend or delete any category (i.e. region) of dish.
+
 ## Validation
 ### HTML
 -   The [W3 Validator](https://validator.w3.org/) was used to check that there were no errors in the HTML code.
