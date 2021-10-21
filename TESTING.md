@@ -12,6 +12,7 @@
 -   Admin able to edit any recipe, regardless if they have created it or not.
 -   Admin able to delete any recipe, regardless if they have created it or not; modal offering confirmatory step working correctly.
 -   Admin able to view, create new, amend or delete any category (i.e. region) of dish.
+-   Flash messages working for above on top left side of navbar
 
 ## Validation
 ### HTML
