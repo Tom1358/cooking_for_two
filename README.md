@@ -183,6 +183,10 @@ I originally planned to use [this logo](static/images/logo.png) but eventually d
 ## Testing
 Please see [TESTING.md](TESTING.md) for details on testing and future improvements.
 
+Please note admin credentials for testing purposes are:
+Username: admin
+password: admin
+
 -----
 
 ## Deployment

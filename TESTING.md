@@ -8,6 +8,7 @@
 -   Logged-in user is able to upload a new recipe, and this saves to DB.
 -   User able to edit pre-existing recipe that they have created.  Unable to edit pre-existing recipe created by other user.
 -   User able to delete a recipe they have created; modal offers confirmation step so as not to accidentally delete recipe.
+-   User able to search for recipes based on key word, ingredient or title; no results show 'No Recipes Found' as expected.
 -   Admin able to edit any recipe, regardless if they have created it or not.
 -   Admin able to delete any recipe, regardless if they have created it or not; modal offering confirmatory step working correctly.
 -   Admin able to view, create new, amend or delete any category (i.e. region) of dish.
