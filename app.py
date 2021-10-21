@@ -125,9 +125,9 @@ def add_recipe():
         dish = {
             "region": request.form.get("region"),
             "dish_name": request.form.get("dish_name"),
-            "ingredients": request.form.getlist("ingredients"),
-            "recipe": request.form.getlist("recipe"),
-            "equipment": request.form.getlist("equipment"),
+            "ingredients": request.form.get("ingredients").split(", "),
+            "recipe": request.form.get("recipe").split(", "),
+            "equipment": request.form.get("equipment").split(", "),
             "description": request.form.get("description"),
             "image": request.form.get("image"),
             "created_by": session["user"]
