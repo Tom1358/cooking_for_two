@@ -1,6 +1,6 @@
 # Cooking For Two
 
-Cooking is a hobby and necessity that can be challenging to fit into a busy lifestyle.  This website will aim to help give new ideas to two-person households (or could be doubled-up for a four-person household) and serve as a repository – essentially a personalised online cooking book – that users can upload new recipes to, modify or delete these new recipes, and buy the necessary kitchen equipment needed to cook the recipes.
+Cooking is a hobby and necessity that can be challenging to fit into a busy lifestyle.  This website will aim to help give new ideas to two-person households (or could be doubled-up for a four-person household) and serve as a repository – essentially a personalised online cooking book – that users can upload new recipes to, modify or delete these new recipes.  Future planning for the website would allow links from the individual recipe pages to a shop page, which the website owner could get commission/ revenue from.
 
 ![website on various screens](static/images/responsive.PNG)
 
