@@ -1,13 +1,21 @@
 # Cooking for Two Testing
 
 ## Validation
-### W3 HTML
+### HTML
+-   The [W3 Validator](https://validator.w3.org/) was used to check that there were no errors in the HTML code.
+-   Errors that were found were due to the Jinja templating language.
 
-### W3 CSS
+### CSS
+-   The [W3 Validator](https://validator.w3.org/) was used to check that there were no errors in the CSS code.
+-   There were no errors found.
 
 ### JavaScript
+-   The only JavaScript used in the final product of the website was Bootstrap's inbuilt JS.
+-   Please see below: 'Adding Ingredients' in [Issues still to overcome](#issues-still-to-overcome)
 
-### Pythin
+### Python
+-   The [PEP8 Validator](http://pep8online.com/) was used to check that there were no errors in the Python code.
+-   There were no errors found.
 
 ### Google Lighthouse Audit
 
