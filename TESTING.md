@@ -39,6 +39,28 @@
 -   There were no errors found.
 
 ### Google Lighthouse Audit
+<details>
+<summary>Mobile Profile Page</summary>
+
+![mobile lighthouse audit](static/images/lighthouse-profile-mobile.PNG)
+</details>
+<details>
+<summary>Desktop Profile Page</summary>
+
+![desktop lighthouse audit](static/images/lighthouse-profile-desktop.PNG)
+</details>
+<details>
+<summary>Mobile New Recipe Page</summary>
+
+![mobile lighthouse audit](static/images/lighthouse-create-mobile.PNG)
+</details>
+<details>
+<summary>Desktop New Recipe Page</summary>
+
+![desktop lighthouse audit](static/images/lighthouse-create-desktop.PNG)
+</details>
+The above Google Lighthouse examples show that the website would be best utilised by improving the Search Engine Optimisation, and the Performance.  Key take-aways from this are that images can be served in next-gen formats (rather than the URL link method I have used), reduce CSS, JS and duplicated JS modules (which will be used by Bootstrap), and eliminate render-blocking resources.
+
 
 ## Testing User Stories
 
