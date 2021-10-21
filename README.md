@@ -239,9 +239,10 @@ To create a Heroku app:
 
 ### Content
 
-- [Hello Fresh](https://www.hellofresh.co.uk/) - for recipe ideas and images
-- fontawesome.com for icons
-- All other content written by myself
+-   [Hello Fresh](https://www.hellofresh.co.uk/) - for recipe ideas and images
+-   fontawesome.com for icons
+-   BBC Food - for images of dishes
+-   All other content written by myself
 
 ### Structure
 
