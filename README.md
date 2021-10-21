@@ -118,15 +118,13 @@ I originally planned to use [this logo](static/images/logo.png) but eventually d
 -----
 
 ## Database design
-(dbdiagram.io)
-    Indexes
-        recipes
-    Queries
-        browsing
-        users
-        searching
-        uploading
-        deletion
+
+<details>
+<summary>MongoDB was the database used for storing and accessing data, using the following plan.</summary>
+
+![layout created with dbdiagram.io](static/images/db_diagram.PNG)
+</details><br>
+
 
 -----
 
@@ -156,7 +154,7 @@ I originally planned to use [this logo](static/images/logo.png) but eventually d
 
 - GitHub - code repository with version control management
 - GitPod - IDE for writing and editing code
-- dbDiagram - for planning DB structure
+- dbdiagram.io - for planning DB structure
 - Balsamiq - wireframes for visual planning of website structure
 </details><br>
 
@@ -183,6 +181,7 @@ I originally planned to use [this logo](static/images/logo.png) but eventually d
 -----
 
 ## Testing
+Please see [TESTING.md](TESTING.md) for details on testing and future improvements.
 
 -----
 

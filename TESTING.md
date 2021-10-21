@@ -108,6 +108,7 @@
 
 </details>
 
--   However, due to time constraints was unable to find a way for the 'remove' functionality to remove an input once the user had added it.  
--   The workaround I have implemented is the user inputting ingredients and recipe stages as a string separated by a comma, then the Python split(', ') method is splitting these into separate strings for the array in the database.
--   In this way, the user has input functionality for the creation and amending of recipes, and for future release (using the Agile framework's iterative development methodology) this ability to add and remove ingredients and recipe stages on the front-end HTML page can be a non-MVP feature.
+-   However, due to time constraints was unable to find a way for the 'remove' functionality to remove an input once the user had added it.  (There were several methods I tried, one of which was passing an [onclick event in a template literal](https://stackoverflow.com/questions/45129421/passing-onclick-event-in-template-literal), but unfortunately this did not work.)
+-   The workaround I have implemented is the user inputting ingredients and recipe stages as a string separated by a comma, then the Python split(', ') method is splitting these into separate strings into an array for storage in the database.
+-   In this way, the user has input functionality for the creation and amending of recipes, so basic CRUD functionality is achieved, and for future release (using the Agile framework's iterative development methodology) this ability to add and remove ingredients and recipe stages on the front-end HTML page can be a non-MVP feature.
+
